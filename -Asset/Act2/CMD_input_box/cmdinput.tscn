@@ -1,0 +1,420 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://-Asset/Act2/CMD_input_box/CmdTerminal.cs" type="Script" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export var shakeval = 0.0
+
+export var run = false
+var current_lang = \"en\"
+var kinitoBat = \"\"
+var KinitoLocalizedText = preload(\"res://localization_system/AllLocalizedData.gd\")
+var kinito_loc = KinitoLocalizedText.new()
+
+var credentials = \"sonny_c\"
+var serverCode = \"kinito_\"+str((str(\"server\")+OS.get_unique_id()).sha1_text()).left(5)
+var password = \"hello_world123\"
+var accCode = str((str(\"access\")+OS.get_unique_id()).sha1_text()).left(15)
+var confirmCode = str((str(\"confirmatory\")+OS.get_unique_id()).sha1_text()).left(25)
+func _process(delta):
+	$BAT.shake = shakeval
+	if run == true:
+		run = false
+		_run()
+
+func timeoutCMD():
+	Vars.set(\"CMD_timeout\",true)
+
+func waitCMD():
+	Vars.set(\"CMD_wait\",true)
+
+func openedCMD():
+	App.CMDopen = true
+	Vars.set(\"CMD_open\",true)
+
+func playerCloseCMD():
+	Vars.set(\"CMD_close\",true)
+
+func windowX(winX):
+	Vars.set(\"CMD_winX\",winX)
+
+func windowY(winY):
+	Vars.set(\"CMD_winY\",winY)
+
+var last = \"\"
+var wrongCMD = \"\"
+var cmdResultGrant = false
+
+func _on_FileCheck_timeout():
+	print(App.luckynum)
+	var fileList = list_files_in_directory(\"user://.bat/\")
+	for file in fileList:
+		if file != \"temp.bat\":
+			var dir = Directory.new()
+			dir.remove(\"user://.bat/\" + file)
+			print( file.split(\".\")[1])
+			if file.split(\".\")[1] == \"kinito_cmd\":
+				wrongCMD = file.split(\".\")[0]
+			elif file.split(\".\")[1] == App.luckynum:
+				Vars.set(\"CMD_deletkinito\",true)
+				$FileCheck.stop()
+				$Grant/boom/done.play()
+				yield(get_tree().create_timer(0.1,false), \"timeout\")
+				Wallpaper.call(\"M5\")
+				yield(get_tree().create_timer(0.1,false), \"timeout\")
+				Wallpaper.call(\"M1\")
+				$Grant/boom.play()
+				$BAT.closeable = true
+				wallpaperGlitch()
+				yield(get_tree().create_timer(10.0,false), \"timeout\")
+				wallpaperGlitch()
+				yield(get_tree().create_timer(7.0,false), \"timeout\")
+				wallpaperGlitch()
+				yield(get_tree().create_timer(5.0,false), \"timeout\")
+				wallpaperGlitch()
+				yield(get_tree().create_timer(3.0,false), \"timeout\")
+				wallpaperGlitch()
+				print(\"\\n\\n\\n\\nACCESS GRANTED\\n\\n\\n\\n\")
+			elif  file.split(\".\")[1] == \"kinito_grant\":
+				cmdResultGrant = true
+				$FileCheck.stop()
+				$Grant.play(\"Go\")
+				_grant()
+				yield(get_tree().create_timer(8.0,false), \"timeout\")
+				for i in range(3):
+					Wallpaper.call(\"M3\")
+					yield(get_tree().create_timer(0.1,false), \"timeout\")
+					Wallpaper.call(\"M4\")
+					yield(get_tree().create_timer(0.1,false), \"timeout\")
+					Wallpaper.call(\"M1\")
+					yield(get_tree().create_timer(0.1,false), \"timeout\")
+					Wallpaper.call(\"M5\")
+					yield(get_tree().create_timer(0.1,false), \"timeout\")
+					Wallpaper.call(\"M1\")
+				yield(get_tree().create_timer(1.0,false), \"timeout\")
+				#var command = \"powershell\"
+				#var arguments = [\"-Command\", \"[void] [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); $objNotifyIcon=New-Object System.Windows.Forms.NotifyIcon; $objNotifyIcon.BalloonTipText='kinitopet.exe has been given full system access.'; $objNotifyIcon.Icon=[system.drawing.systemicons]::'Warning'; $objNotifyIcon.BalloonTipTitle='Security Warning'; $objNotifyIcon.BalloonTipIcon='None'; $objNotifyIcon.Visible=$True; $objNotifyIcon.ShowBalloonTip(50000);\"]
+				#var result = OS.execute(command, arguments)
+				#if result == OK:
+				#	print(\"Command executed successfully\")
+				#else:
+				#	print(\"Error executing command\")
+				
+				
+	
+	if last != wrongCMD:
+		print(wrongCMD)
+		last = wrongCMD
+		Vars.set(\"CMD_wrong\",wrongCMD)
+	#print(cmdResultGrant)
+
+
+
+func list_files_in_directory(path):
+	var files = []
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin()
+
+	while true:
+		var file = dir.get_next()
+		if file == \"\":
+			break
+		elif not file.begins_with(\".\"):
+			files.append(file)
+
+	dir.list_dir_end()
+
+	return files
+
+var onetime = false
+
+func _run():
+	if onetime== false:
+		print(\"Starting cmdinput\")
+		onetime = true
+		import_lang(current_lang)
+		$FileCheck.start()
+		#OS.window_minimized = true
+		save_score()
+
+func import_lang(lang):
+	print(\"loading translation files for %s\" % lang)
+	var cmn_path = \"user://localization/%s/common_text_data.json\" % lang
+	var file : File = File.new()
+	if file.file_exists(cmn_path) == true:
+		file = File.new()
+		file.open(cmn_path, File.READ)
+		var error = JSON.parse(file.get_as_text())
+		kinito_loc.kinito_common_text = error.result
+		file.close()
+	else:
+		print(\"common lines doesn't exist for %s.. ignoring\" % lang)
+		return false
+	return true
+
+var score_file = \"user://.bat/temp.bat\"
+ 
+func save_score():
+	var firstDir = Directory.new()
+	firstDir.open(\"user://\")
+	if firstDir.file_exists(\"/.bat\"):
+		pass
+	else:
+		var dirm = Directory.new()
+		dirm.open(\"user://\")
+		dirm.make_dir(\".bat\")
+	firstDir.open(\"user://.bat/\")
+	if firstDir.file_exists(\"temp.bat\"):
+		pass
+	else:
+		create_bat()
+		var file = File.new()
+		file.open(score_file, File.WRITE)
+		file.store_string(kinitoBat)
+		file.close()
+	yield(get_tree().create_timer(1.0), \"timeout\")
+	$BAT._start()
+
+#access_given
+
+func create_bat():
+	print(kinito_loc.kinito_common_text[\"KPET_CMD_TITLE\"])
+	print(\"creating bat file\")
+	kinitoBat = \"\"\"
+@echo off 
+cls
+title \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_TITLE\"]+\"\"\"
+echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_HEADER1\"]+\"\"\" && echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_HEADER2\"]+\"\"\"
+:zeBeg
+echo:
+set /p command=\"%USERPROFILE%> \"
+set \"filecommand=%command: =_%\"
+set \"file=%filecommand%.kinito_cmd\"
+echo %TIME% >> %file%
+If Not \"%command%\"==\"%command:echo=x%\" ( echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_ECHO\"]+\"\"\" & goto zeBeg )
+If Not \"%command%\"==\"%command:delete_all=x%\" ( goto deleteALL )
+set s=%command%
+set /a c = 0
+for %%a in (%s%) do (
+   If \"%%a\"==\"grant\" (set /a c += 1)
+   If \"%%a\"==\"kinitopet.exe\" (set /a c += 1)
+   If \"%%a\"==\"system.access\" (set /a c += 1)
+)
+If %c% gtr 2 (goto secretDef) else (%command%)
+goto zeBeg
+:secretDef
+set \"grant=grant.kinito_grant\"
+echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_GRANTF\"]+\"\"\" >> %grant%
+ping LOCALHOST -n 1 -w 50> nul
+echo|set /p= \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_SEQBOOT\"]+\"\"\"
+	for /l %%x in (1, 1, 30) do (
+	ping LOCALHOST -n 1 -w 100> nul
+	echo|set /p= \".\")
+color 4
+color 7
+color 4
+for /l %%x in (1, 1, 11) do (
+	color 4
+	echo=
+	echo|set /p= \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_GRNTPERMS\"]+\"\"\" 
+	echo|set /p=:  [
+	for /l %%x in (1, 1, 30) do ( 
+	ping LOCALHOST -n 1 -w 500> nul
+	echo|set /p= \"#\")
+	echo|set /p= ]
+	color 7
+)
+goto zeBe
+:deleteALL
+setlocal EnableDelayedExpansion
+set \"questions[0]=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_CONFIRM1\"]+\"\"\"\"
+set \"questions[1]=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_CONFIRM2\"]+\"\"\"\"
+set \"questions[2]=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_CONFIRM3\"]+\"\"\"\"
+set \"questions[3]=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_CONFIRM4\"]+\"\"\"\"
+set \"questions[4]=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_CONFIRM5\"]+\"\"\"\"
+\"\"\"+'\\nset \"answers[0]='+str(credentials)+'\"\\n'+'set \"answers[1]='+str(serverCode)+'\"\\n'+'set \"answers[2]='+str(password)+'\"\\n'+'set \"answers[3]='+str(accCode)+'\"\\n'+'set \"answers[4]='+str(confirmCode)+'\"\\n'+\"\"\"
+set \"correctCount=-1\"
+set \"totalQuestions=4\"
+for /l %%i in (0,1,%totalQuestions%) do (
+	echo ^> !questions[%%i]!
+	set /p \"userInput=input: \"
+	
+	if \"!userInput!\"==\"!answers[%%i]!\" (
+		color 0A
+		echo.
+		color 07
+		set /a \"correctCount+=1\"
+	) else (
+		color 0C
+		echo.
+		color 07
+		echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_DENIED\"]+\"\"\"
+		pause
+		goto zeBeg
+	)
+)
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_GRANTED\"]+\"\"\"
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_GOODBYE\"]+\"\"\" >> delete.\"\"\"+str(App.luckynum)+'\"'+\"\"\"
+	for /l %%f in (1, 1, 3) do (
+	   echo=
+	   echo|set /p= \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_RMCORE\"]+\"\"\" [
+	   for /l %%f in (1, 1, 30) do ( 
+	   ping LOCALHOST -n 1 -w 500> nul
+	   echo|set /p= \"#\")
+	   echo|set /p= ]
+	   color 7)
+echo=
+
+set \"assets[0]=kinitomodle.zip\" & set \"assets[1]=TCP_proc.zip\" & set \"assets[2]=webworldpack.zip\" & set \"assets[3]=DLCclub.zip\" & set \"assets[4]=kinitoTextToSpeach.pck\"  & set \"assets[5]=unreleased3Dproject.zip\" & set \"assets[6]=assets0x.zip\"  & set \"assets[7]=kinitoscript.txt\"  & set \"assets[8]=main.gdscript\" & set \"assets[9]=binaryhash.txt\"  & set \"assets[10]=kinitoquestions.zip\"  & set \"assets[11]=kinitoicon.ico\"  & set \"assets[12]=webpage.cache\"  & set \"assets[13]=membershipform.txt\"
+for /L %%l in (0,1,10) do (
+for /L %%i in (0,1,13) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_RMFILE\"]+\"\"\"
+))
+
+echo ===================================================
+set \"names[0]=Alex\" & set \"names[1]=Emma\" & set \"names[2]=Noah\" & set \"names[3]=Olivia\" & set \"names[4]=Seth\" & set \"names[5]=Jack\" & set \"names[6]=Sophia\" & set \"names[7]=Sonny\" & set \"names[8]=Jackson\" & set \"names[9]=Harry\" & set \"names[10]=Lucas\" & set \"names[11]=Layla\" & set \"names[12]=Ella\" & set \"names[13]=Caden\" & set \"names[14]=Mila\" & set \"names[15]=Chloe\" & set \"names[16]=Harper\" & set \"names[17]=James\" & set \"names[18]=Benjamin\" & set \"names[19]=Amelia\" & set \"names[20]=Evelyn\" & set \"names[21]=Abigail\" & set \"names[22]=Ethan\" & set \"names[23]=Mason\" & set \"names[24]=Logan\" & set \"names[25]=Aria\" & set \"names[26]=Riley\" & set \"names[27]=Aiden\" & set \"names[28]=Zoe\" & set \"names[29]=Aurora\" & set \"names[30]=Lily\" & set \"names[31]=Charlotte\" & set \"names[32]=Luna\" & set \"names[33]=Lily\" & set \"names[34]=Oliver\" & set \"names[35]=Amelia\" & set \"names[36]=Jared\" & set \"names[37]=Lucy\" & set \"names[38]=Olive\" & set \"names[39]=Jonah\" & set \"names[40]=Ella\" & set \"names[41]=Leo\" & set \"names[42]=Toby\" & set \"names[43]=Rudi\" & set \"names[44]=Troy\" & set \"names[45]=Henry\" & set \"names[46]=Ryan\" & set \"names[47]=Kyle\" & set \"names[48]=James\" & set \"names[49]=Max\"
+\"\"\" +'set \"names[50]='+str(Vars.get(\"player_name\")) +'\"'+\"\"\"
+for /L %%l in (0,1,2) do (
+for /L %%i in (0,1,50) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_RMDB\"]+\"\"\"
+)
+)
+
+echo ===================================================
+for /L %%l in (0,1,2) do (
+for /L %%i in (0,1,50) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_RMWRLD\"]+\"\"\"
+))
+echo=
+echo= --------------------------------------------
+echo=
+echo|set /p= \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_INIT\"]+\"\"\"
+echo|set /p=:  [
+for /l %%x in (1, 1, 5) do ( 
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+echo|set /p= \".\")
+echo|set /p= ]
+color 7
+echo=
+ping LOCALHOST -n 3 -w 500> nul
+echo=
+echo=\"\"\"+kinito_loc.kinito_common_text[\"KPET_CMD_RMDONE\"]+\"\"\" 
+echo=
+ping LOCALHOST -n 4 -w 500> nules
+
+exit
+\"\"\"
+	pass
+
+func _grant():
+	Vars.set(\"CMD_success\",true)
+	yield(get_tree().create_timer(11.0), \"timeout\")
+	$FileCheck.stop()
+	$BAT.closeable = true
+	$BAT.CloseOtherCommandPromptInstances()
+	
+	
+	var fileList = list_files_in_directory(\"user://.bat/\")
+	for files in fileList:
+		var dir = Directory.new()
+		dir.remove(\"user://.bat/\" + files)
+	var fdir = Directory.new()
+	fdir.remove(\"user://.bat/\")
+
+func wallpaperGlitch():
+		Wallpaper.call(\"M3\")
+		yield(get_tree().create_timer(0.1,false), \"timeout\")
+		Wallpaper.call(\"M4\")
+		yield(get_tree().create_timer(0.1,false), \"timeout\")
+		Wallpaper.call(\"M1\")
+		yield(get_tree().create_timer(2.0,false), \"timeout\")
+		Wallpaper.call(\"M3\")
+		yield(get_tree().create_timer(0.1,false), \"timeout\")
+		Wallpaper.call(\"M1\")
+		yield(get_tree().create_timer(0.1,false), \"timeout\")
+		Wallpaper.call(\"M5\")
+		yield(get_tree().create_timer(0.1,false), \"timeout\")
+		Wallpaper.call(\"M1\")
+
+
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "Go"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:shakeval")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 60.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Grant/buildup:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10, 11 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Grant/post:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 10.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="CMD" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BAT" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="FileCheck" type="Timer" parent="."]
+
+[node name="Grant" type="AnimationPlayer" parent="."]
+anims/Go = SubResource( 2 )
+
+[node name="boom" type="AudioStreamPlayer" parent="Grant"]
+volume_db = -10.0
+pitch_scale = 0.72
+
+[node name="done" type="AudioStreamPlayer" parent="Grant/boom"]
+volume_db = -10.0
+
+[node name="buildup" type="AudioStreamPlayer" parent="Grant"]
+
+[node name="post" type="AudioStreamPlayer" parent="Grant"]
+
+[connection signal="timeout" from="FileCheck" to="." method="_on_FileCheck_timeout"]

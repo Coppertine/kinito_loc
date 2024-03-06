@@ -8,34 +8,39 @@ var patched_dialogue = false
 
 var current_lang = "en"
 
+#region Classes
 var KinitoLocalizedText = preload("res://localization_system/AllLocalizedData.gd")
 var kinito_loc = KinitoLocalizedText.new()
 
-#region Classes
 var KinitoWelcomeMsgs = preload("res://localization_system/ModifiedSource/WelcomeBackMsgs.gd")
 var kinito_wmsgs = KinitoWelcomeMsgs.new()
 
 var ResetGameData = preload("res://localization_system/ModifiedSource/ResetGameData.gd")
 var reset_data = ResetGameData.new()
+
 #endregion
 
 func load_translation_files(lang):
+	print("loading translation files for %s" % lang)
 	var dio_path = "user://localization/%s/dialogue_data.json" % lang
 	var cmn_path = "user://localization/%s/common_text_data.json" % lang
 	
 	var file : File = File.new()
 	
+	print("loading kinito lines")
 	if file.file_exists(dio_path) == true:
 		file = File.new()
 		file.open(dio_path, File.READ)
 		
-		var error = JSON.parse(file.gess_as_text())
+		var error = JSON.parse(file.get_as_text())
+		print(error)
 		kinito_loc.kinito_dialogue = error.result
 		
 		file.close()
 	else:
-		return false
+		print("kinito lines doesn't exist for %s.. ignoring" % lang)
 		
+	print("loading common lines")
 	if file.file_exists(cmn_path) == true:
 		file = File.new()
 		file.open(cmn_path, File.READ)
@@ -45,8 +50,8 @@ func load_translation_files(lang):
 		
 		file.close()
 	else:
-		return false
-		
+		print("common lines doesn't exist for %s.. ignoring" % lang)
+				
 	patched_dialogue = false
 	patched_pc = false
 	patched_desktop = false
@@ -113,14 +118,15 @@ func _patch_app000():
 			welcome_text = get_parent().get_parent().get_node("0").get_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s2/LoginScreen/Messages/WelcomeBack")		
 			if welcome_text != null:
 				welcome_text.bbcode_text = "\n[center]"+kinito_wmsgs.get_rand_text(kinito_loc.kinito_common_text)+"\n"
-					
+				print("Patched PC Welcome Text")
 			patched_pc = true
 			
 		if troy_en_text != null:
 			troy_en_text.bbcode_text = kinito_loc.kinito_common_text["COMMON_A_GAME_BY"]
+			print("Patched Boot credits")
 		if boot_text != null:
 			boot_text.bbcode_text = kinito_loc.kinito_common_text["COMMON_BOOT_SCREEN"]
-		
+			print("Patched Boot Screen")
 		if password_text != null:
 			#$CanvasLayer/ColorRect/RichTextLabel2.bbcode_text = "Path\n\n" + kinito_loc.kinito_common_text["COMMON_PASSWORD"]
 			password_text.placeholder_text = kinito_loc.kinito_common_text["COMMON_PASSWORD"]
@@ -135,6 +141,7 @@ func _patch_app000():
 			_patch_computer_app("Mine_Sweeper", "PC_APPS_MINESWEEPER")
 			_patch_computer_app("3D_Pinball", "PC_APPS_PINBALL")
 			_patch_computer_app("OS_Paint", "PC_APPS_PAINT")
+			print("Patched desktop app shotcuts")
 			patched_desktop = true
 				
 func _patch_app001():
@@ -145,6 +152,7 @@ func _patch_app001():
 		if !patched_dialogue:	
 			for name in dio.get_animation_list():
 				patch_kinito_dialogue(dio.get_animation(name), (kinito_loc.kinito_dialogue[name])[0], (kinito_loc.kinito_dialogue[name])[1])
+			print("Patched kinito's TTS lines")
 			patched_dialogue = true
 
 func _patch_app003():
@@ -250,11 +258,13 @@ func _patch_app010():
 		if last_save != null:
 			last_save.text = kinito_loc.kinito_common_text["COMMON_LSAVED"] % Data.data["lastSave"]
 
+
 func _process(delta):
 	# Patch intro screen (PC)
 	_show_node_paths()
 	if files_loaded:
 		if Input.is_key_pressed(KEY_TAB):
+			print("Reloading translation files...")
 			files_loaded = load_translation_files("en")
 		
 		_show_localized()
@@ -267,3 +277,4 @@ func _process(delta):
 		_patch_app003()
 		_patch_app007()
 		_patch_app010()
+

@@ -1,0 +1,234 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+var current_lang = \"en\"
+var KinitoLocalizedText = preload(\"res://localization_system/AllLocalizedData.gd\")
+var kinito_loc = KinitoLocalizedText.new()
+
+func _ready():
+	$BAT.wid = 800 * Vars.get(\"nodeScale\").x
+	$BAT.hig = 500 * Vars.get(\"nodeScale\").y
+
+func _close():
+	endCMD()
+	$BAT.closeable = true
+	#yield(get_tree().create_timer(10.0,false), \"timeout\")
+	#$BAT.CloseCommandPrompts()
+	pass
+
+var onetime = false
+func _run():
+	if onetime== false:
+		onetime = true
+		import_lang(current_lang)
+		save_score()
+		
+func import_lang(lang):
+	print(\"loading translation files for %s\" % lang)
+	var cmn_path = \"user://localization/%s/common_text_data.json\" % lang
+	var file : File = File.new()
+	if file.file_exists(cmn_path) == true:
+		file = File.new()
+		file.open(cmn_path, File.READ)
+		var error = JSON.parse(file.get_as_text())
+		kinito_loc.kinito_common_text = error.result
+		file.close()
+	else:
+		print(\"common lines doesn't exist for %s.. ignoring\" % lang)
+		return false
+	return true
+
+var score_file = \"user://.bat/temp.bat\"
+func save_score():
+	var firstDir = Directory.new()
+	firstDir.open(\"user://\")
+	if firstDir.file_exists(\"/.bat\"):
+		pass
+	else:
+		var dirm = Directory.new()
+		dirm.open(\"user://\")
+		dirm.make_dir(\".bat\")
+	firstDir.open(\"user://.bat/\")
+	if firstDir.file_exists(\"temp.bat\"):
+		pass
+	else:
+		var file = File.new()
+		file.open(score_file, File.WRITE)
+		file.store_string(kinitoBat)
+		file.close()
+	yield(get_tree().create_timer(1.0), \"timeout\")
+	$BAT.RunBatFile()
+	
+	
+
+func playerCloseCMD():
+	Vars.set(\"loopCMD_close\",true)
+
+func openedCMD():
+	App.CMDopen = true
+	Vars.set(\"loopCMD_open\",true)
+	$anim.play(\"on\")
+	$Funny.start()
+
+func endCMD():
+	var user_data_dir = OS.get_user_data_dir()
+	var file_path = user_data_dir + \"/.bat/cmd.off\"
+	var file = File.new()
+	if file.open(file_path, File.WRITE) == OK:
+		file.close()
+	$Funny.stop()
+	yield(get_tree().create_timer(1.5), \"timeout\")
+	$anim.play(\"off\")
+
+onready var kinitoBat = \"\"\"
+@echo off
+setlocal EnableDelayedExpansion
+title \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_TITLE\"]+\"\"\"
+cls
+:loop
+set \"assets[0]=kinitomodle.zip\" & set \"assets[1]=TCP_proc.zip\" & set \"assets[2]=webworldpack.zip\" & set \"assets[3]=DLCclub.zip\" & set \"assets[4]=kinitoTextToSpeach.pck\"  & set \"assets[5]=unreleased3Dproject.zip\" & set \"assets[6]=assets0x.zip\"  & set \"assets[7]=kinitoscript.txt\"  & set \"assets[8]=main.gdscript\" & set \"assets[9]=binaryhash.txt\"  & set \"assets[10]=kinitoquestions.zip\"  & set \"assets[11]=kinitoicon.ico\"  & set \"assets[12]=webpage.cache\"  & set \"assets[13]=membershipform.txt\"
+
+for /L %%i in (0,1,13) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_DWNFILE\"]+\"\"\"
+)
+for /L %%i in (0,1,13) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_MODFILE\"]+\"\"\"
+)
+
+for /L %%i in (0,1,13) do (
+	ping LOCALHOST -n 1 -w 500> nul
+	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_ASSETC\"]+\"\"\"
+)
+
+if exist \"cmd.off\" (
+	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_COMPILEC\"]+\"\"\"
+	goto :end
+) else (
+	goto :loop
+)
+
+:end
+echo=
+echo= --------------------------------------------
+echo=
+echo|set /p= \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_INIT\"]+\"\"\"
+echo|set /p=:  [
+for /l %%x in (1, 1, 5) do ( 
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+ping LOCALHOST -n 1 -w 500> nul
+echo|set /p= \".\")
+echo|set /p= ]
+color 7
+echo=
+ping LOCALHOST -n 3 -w 500> nul
+echo=
+echo=\"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_YW\"]+\"\"\"
+echo=
+ping LOCALHOST -n 3 -w 500> nul
+ping LOCALHOST -n 3 -w 500> nul
+exit
+\"\"\"
+
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "off"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("off:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("binary:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.01 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ping:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6.4, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "on"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("binary:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("binary:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.01, 1.0 ]
+}
+
+[node name="loopCMD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Funny" type="Timer" parent="."]
+
+[node name="BAT" type="Node" parent="."]
+
+[node name="binary" type="AudioStreamPlayer" parent="."]
+volume_db = -17.0
+pitch_scale = 0.01
+
+[node name="off" type="AudioStreamPlayer" parent="."]
+volume_db = -7.0
+
+[node name="ping" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+pitch_scale = 0.75
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/off = SubResource( 2 )
+anims/on = SubResource( 3 )
+
+[connection signal="timeout" from="Funny" to="BAT" method="_on_Funny_timeout"]
