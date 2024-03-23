@@ -192,34 +192,31 @@ func _patch_app001():
 
 func _patch_app003():
 	if Tab.data["open"][3] == true:
-		var node_3 = get_parent().get_parent().get_node("3")
-		
-		if node_3.has_node("Tab/Active"): # window (content warning / readme)
-			if node_3.has_node("Tab/Active/Title"):
-				node_3.get_node("Tab/Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_WELCOME"]
-			if node_3.has_node("Tab/Active/ASSET/1/Text"):
-				node_3.get_node("Tab/Active/ASSET/1/Text").bbcode_text = kinito_loc.kinito_common_text["WINDOW_CONTENTW"]
-			if node_3.has_node("Tab/Active/ASSET/1/Title"):
-				node_3.get_node("Tab/Active/ASSET/1/Title").text = kinito_loc.kinito_common_text["WINDOW_CONTENTW_HEADER"]
-			if node_3.has_node("Tab/Active/ASSET/1/NEST"): # window button
-				node_3.get_node("Tab/Active/ASSET/1/NEST").text = kinito_loc.kinito_common_text["COMMON_CONTINUE"]
-
-		# TODO: THIS NEEDS TO CHANGE to using get_child(0)
-		if node_3.has_node("@Tab@73/Active"):
-			if node_3.has_node("@Tab@73/Active/Title"):
-				node_3.get_node("@Tab@73/Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_HOWTO"]
-			if node_3.has_node("@Tab@73/Active/ASSET/1/TITLE"):
-				node_3.get_node("@Tab@73/Active/ASSET/1/TITLE").text = kinito_loc.kinito_common_text["WINDOW_HOWTO_HEADER"]
-			if node_3.has_node("@Tab@73/Active/ASSET/1/TEXT"):
-				node_3.get_node("@Tab@73/Active/ASSET/1/TEXT").text = kinito_loc.kinito_common_text["WINDOW_HOWTO"]
-			if node_3.has_node("@Tab@73/Active/ASSET/1/Okayt"):
-				node_3.get_node("@Tab@73/Active/ASSET/1/Okayt").text = kinito_loc.kinito_common_text["COMMON_OK"]
+		var node_3 = get_parent().get_parent().get_node("3").get_child(0)
+			if node_3.has_node("Active/ASSET/1/NEST"): # window (content warning / readme)
+				# THE ONLY WAY TO KNOW IF THIS IS A WELCOME OR HOW TO APP
+				if get_parent().get_parent().get_node("3").get_child(0).has_node("Active/Title"):
+					node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_WELCOME"]
+				if node_3.has_node("Active/ASSET/1/Text"):
+					node_3.get_node("Active/ASSET/1/Text").bbcode_text = kinito_loc.kinito_common_text["WINDOW_CONTENTW"]
+				if node_3.has_node("Active/ASSET/1/Title"):
+					node_3.get_node("Active/ASSET/1/Title").text = kinito_loc.kinito_common_text["WINDOW_CONTENTW_HEADER"]
+				if node_3.has_node("Active/ASSET/1/NEST"): # window button
+					node_3.get_node("Active/ASSET/1/NEST").text = kinito_loc.kinito_common_text["COMMON_CONTINUE"]
+			elif node_3.has_node("Active/ASSET/1/Okayt"):
+				if node_3.has_node("Active/Title"):
+					node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_HOWTO"]
+				if node_3.has_node("Active/ASSET/1/TITLE"):
+					node_3.get_node("Active/ASSET/1/TITLE").text = kinito_loc.kinito_common_text["WINDOW_HOWTO_HEADER"]
+				if node_3.has_node("Active/ASSET/1/TEXT"):
+					node_3.get_node("Active/ASSET/1/TEXT").text = kinito_loc.kinito_common_text["WINDOW_HOWTO"]
+				if node_3.has_node("Active/ASSET/1/Okayt"):
+					node_3.get_node("Active/ASSET/1/Okayt").text = kinito_loc.kinito_common_text["COMMON_OK"]
 
 func _patch_app007():
 	var patched_button = false
 	if Tab.data["open"][7] and get_parent().get_parent().get_node("7").has_node("Tab/Active"):
 		var tab = get_parent().get_parent().get_node("7").get_node("Tab")
-		
 		var window_title = tab.get_node("Active/Title2")
 		var window_header = tab.get_node("Active/Title")
 		
@@ -285,16 +282,52 @@ func _patch_app010():
 		last_save.text = kinito_loc.kinito_common_text["COMMON_LSAVED"] % Data.data["lastSave"]
 
 func _patch_funfair():
-	# good thing it's only 1 object..
+	# good thing it's only 1 object.. nope..
 	if !patched_funfair and App.data["data"][4] == "FUNFAIR_INITLOAD" and get_tree().current_scene().has_node("Main/FunFair"):
 		print_log("Patching funfair dialog")
+		get_tree().current_scene().get_node("Main/FunFair/IntroSeq/TITLE/Welcome/Viewport/Text").text = kinito_loc.kinito_common_text["YWRD_FFAIR_WELTO"]
+		get_tree().current_scene().get_node("Main/FunFair/IntroSeq/TITLE/AnimationPlayer/start").text = "\n" + kinito_loc.kinito_common_text["YWRD_FFAIR_CLICK"]
 		get_tree().current_scene().get_node("Main/FunFair/Funland/StoryArea/[desc] A miniature version of your funfair").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_FFAIR_MINI"]
+		# Fun fact, the sign in front of the funfair is a text element.. let's change that..
+		# Note, [name] replaces with the chosen player name 
+		# (luckly, one point in the script, 
+		#   there's a check to see if there are more than 4 chars 
+		#   in the name itself and change size of text.)
+		get_tree().current_scene().get_node("Main/FunFair/IntroSeq/TITLE/AnimationPlayer/start").text = kinito_loc.kinito_common_text["YWRD_FFAIR_SIGN"].replace("[name]",Data.data["name"])
 		patched_funfair = true
 		
 func _patch_your_home():
 	if !patched_your_home and App.data["data"][4] == "FUNFAIR_NOCRASH_coaster" and get_tree().current_scene().has_node("House"): #assuming they are in tunnel
 		print_log("Patching your_home dialog")
+		# The house is already initialised at this point and is actually underneath the world.
+		# Attic without ladder
+		get_tree().current_scene().get_node("House/HOUSE/House_extras/[desc] It is too high up").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_HIGH"]
+		# Radio
+		get_tree().current_scene().get_node("House/HOUSE/Collision/[desc] There is no signal").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_HIGH"]
+		
+		# Paintings
+		get_tree().current_scene().get_node("House/HOUSE/Inside/Painting01/[desc] A happy painting").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_HAPPY"]
+		get_tree().current_scene().get_node("House/HOUSE/Inside/Painting02/[desc] A sad painting").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_SAD"]
+		# Kinito painting
+		get_tree().current_scene().get_node("House/HOUSE/Inside/Painting03/[desc] My BFF").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_BFF"]
+		# Self painting
+		get_tree().current_scene().get_node("House/HOUSE/Inside/Painting04/[desc] A familiar painting").name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_SELF"]
+		
+		# Fridge
+		get_tree().current_scene().get_node("House/HOUSE/Collision/[desc] It is full of " + str(Vars.get("HOUSE_favfood"))).name = "[desc] " + kinito_loc.kinito_common_text["YWRD_HOME_FRIDGE"].replace("[favfood]",str(Vars.get("HOUSE_favfood")))
+		
+		# Book
+		var book_name = "House/House/Collision/[desc] Super "+Data.data["name"]+" and their ability to "+str(Vars.get("HOUSE_superpower"))
+		var loc_book_name = kinito_loc.kinito_common_text["YWRD_HOME_BOOK"].replace("[name]",Data.data["name"]).replace("[superpower]",str(Vars.get("HOUSE_superpower"))
+		get_tree().current_scene().get_node(book_name).name = "[desc] " + loc_book_name
+		
+		# Pet house
+		var pet_name = "House/HOUSE/House_extras/pethouse/PetHouse_Plane/[desc] Looks like "+Vars.get("HOUSE_petname")+" the "+Vars.get("HOUSE_pettype")+" is out at the moment"
+		var loc_pet_name = kinito_loc.kinito_common_text["YWRD_HOME_PET"].replace("[petname]", Vars.get("HOUSE_petname")).replace("[pettype]",Vars.get("HOUSE_pettype"))
+		get_tree().current_scene().get_node(pet_name).name = "[desc] " + loc_pet_name
 		patched_your_home = true
+
+
 func _process(delta):
 	# Patch intro screen (PC)
 	_show_node_paths()
@@ -315,7 +348,14 @@ func _process(delta):
 		_patch_app003()
 		_patch_app007()
 		_patch_app010()
-		_patch_funfair()
-		_patch_your_home()
+		if Data.data["sp"] == 12 and Vars.get("PC_Friend_KillAllFINISH") == true: 
+			# there's a ton of stuff with these two that revolve around scene trees that i don't want to f over..
+			# So this should ONLY run once Kinito "kills" all of your Steam Friends (used inside the house)
+			# (Around this point, kinito will save said friends into a json file and some png files in '.steam')
+			
+			# Also for any mod developers, NEVER RELY ON SP 12. 
+			#  It's set to SP 12 as early as the Permission Privilages chapter
+			_patch_funfair()
+			_patch_your_home()
 func print_log(line):
 	print("[localization] ", line)
