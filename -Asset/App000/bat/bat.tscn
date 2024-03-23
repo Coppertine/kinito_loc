@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://-Asset/App000/bat/runbat.cs" type="Script" id=1]
+[ext_resource path="res://-Asset/App000/bat/bat.gd" type="Script" id=2]
+
+[node name="EndBat" type="Node"]
+script = ExtResource( 2 )
+
+[node name="runbat" type="Node" parent="."]
+script = ExtResource( 1 )

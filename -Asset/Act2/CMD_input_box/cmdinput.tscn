@@ -182,7 +182,7 @@ func save_score():
 
 func create_bat():
 	print(kinito_loc.kinito_common_text[\"KPET_CMD_TITLE\"])
-	print(\"creating bat file\")
+	print(\"[localization] creating bat file\")
 	kinitoBat = \"\"\"
 @echo off 
 cls

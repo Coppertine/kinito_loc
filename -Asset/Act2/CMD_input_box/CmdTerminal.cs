@@ -177,7 +177,7 @@ public class CmdTerminal : Node
 			return;
 		}
 		// thanks to lang stuff, this will be the german title instead..	
-		IntPtr hwnd = FindWindow(null, "Eingabeaufforderung");
+		IntPtr hwnd = FindWindow(null, "Command Prompt");
 		if (hwnd != IntPtr.Zero && GetWindowRect(hwnd, out var rect))
 		{
 			if (randomValueX == 0)
