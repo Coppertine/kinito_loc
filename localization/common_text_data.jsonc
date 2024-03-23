@@ -1,4 +1,7 @@
 {
+    // Some common stuff for you to know:
+    // \n = new line, keep these in if you see one of them. (except for internet sections. those are to be changed depending on how well they fit to the screen)
+
 	"COMMON_LANGUAGES": "Languages",
 	
 	"COMMON_BOOT_SCREEN": "OPERATING SYSTEM, BIOS V2.5\nCopyright (C) 19XX-XX, Operating System\n\n==================\n[i]MUSIC BY:[/i]         \nJOEL TUMELTY   \n==================\n\nBIOS Checking System Health OK =V6.32\nCPU and ALU at XX000Hz\n<CPU ID:135987 Patch ID:0001>\nMemory Test   :   XXXXXX k   OK\n\nBIOS BOOT V1 (Sequence system)\nCopyright (C) 19XX-XX, BIOS boot.\n   Detecting OS as Operating Systems    ... GRANTED\n   Detecting System input as M&K        ... GRANTED\n   Detecting CRT output as ___          ... NaN\n   Detecting finish sequence as TRUE    ... TRUE\n\n\n\n\n\n\n\nPress F12 to enter SETUP\nXX/XX/XXXX-283UHJ2-SF9U8G-9237NF-XX\n\n\n\n",
@@ -62,53 +65,60 @@
 	"PC_APPS_MINESWEEPER": "Minesweeper",
 	"PC_APPS_PINBALL": "3D Pinball",
 	"PC_APPS_PAINT": "Paint",
-
-	"PC_NOTES": [
-		">: Welcome back to your computer! Double click an application to open it and explore your wonderful virtual world!", 
-		">: Welcome to the web! Search someting and start exploring.",
-		">: Complete the KinitoPET setup wizard!",
-		">: Run kinitopet.exe",
-		">: It's time to meet your new best friend. Tap on the egg to wake him up.",
-		">: \"Let's get to know each other!\", Kinito would like to learn more about you. Answer the questions using the input boxes.",
-		">: Welcome back! KinitoPET is waiting! Run kinitoPET.exe to pick up where you last left off!",
-		">: Sit back and listen to Kinito's story!.",
-		">: Welcome to the Web World! Click Start to begin!",
-		">: Click on the Abandoned house to meet with Sam!",
-		">: Scrub and clean Sam's house using the sponge and duster.",
-		">: Paint Sam's house using the paint roller. *(remember you can be as creative as you like!)",
-		">: Decorate Sam's house by adding various items and furniture!",
-		">: AOL JFJSL YLWLHAZ LUKSLZZ AVYTLUA ?????????????????????????????????????????? AOL JFJSL YLWLHAZ LUKSLZZ AVYTLUA ???????????????????S?????????????????????????????????O??????????????????????????????????????????N????NY??????",
-		">: ___________",
-		">: Click on the Purple house to meet with Jade!",
-		">: Help Jade out by making toys in her factory!",
-		">: Go to the treehouse to play Kinitos fun game!",
-		">: Welcome to Kinito's Best Friends Analysis Hub! \n Press start to begin...",
-		">: Paint with Kinito! Use the Paint app to paint prompts.",
-		">: Kinito wants to build a world perfect for you. Choose options depending on your preferences",
-		">: Sign up to the KinitoPET friendship club to give Kinito extra features and functions"
-	],
-
-	"EMAIL_KPET_TITLE": "Thank you for installing KinitoPET",
+	
+    "EMAIL_KPET_TITLE": "Thank you for installing KinitoPET",
 	"EMAIL_KPET_SENDER": "<no-reply@kinitopet.com>",
 	"EMAIL_KPET_MESSAGE": "Hello friend!\nThank you for installing the KinitoPET virtual assistant!\n[img=250]res://-Asset/App000/EmailThank.png[/img]\n- \"we are going to have so much fun together!\"\n\nSince you have found interest in our FREE virtual assistant you may also like the KinitoPET friendship club subscription service where an additional multitude of EXCLUSIVE features will become available for you and Kinito to have some fun!\n\n\n\n[color=#9c9a83]\nYou have been automatically subscribed to the KinitoPET newsletter to unsubscribe please reply to <no-reply@kinitopet.com>",
 	
 	"EMAIL_NTL_TITLE": "ITS NOT TOO LATE",
-	"EMAIL_NTL_SENDER": "<upitdrag@????????>",
+	"EMAIL_NTL_SENDER": "<upitdrag@????????>", // do not translate, no known reason why it's called that.
 	"EMAIL_NTL_MESSAGE": "??????????????????????????????????????????????????????????????????????????????????????????????\nOM YJR TRSAZ PG DJSFPED, YTSQQRF OM RMFARDD YOZR,\nS DPIA RMDJTPIFRF, S DQOTOY'D ZPITMGIA VJOZR.\nYJR DRRLRT, NPIMF OM RYJRTRSA EPR,\nS FSMVR EOYJ VTRSYOPM, URY MPEJRTR YP HP.\n\nAOZNP'D TRSAZ, S VUVAR EOYJPIY SM RMF,\nVPMFRZMRF, YJR NTSOM EOAA MRBRT ZRMF.\nYTSQQRF OM YJR ZSVJOMR'D ERN, GPTRBRT OY DRRZD,\nS FOHOYSA DQRVYRT, APDY SZOFDY YJR DYTRSZD.\n[img=100]res://-Asset/App000/EmailQWERTYqr.png[/img]",
+	/**
+    Below is encryped through a Keyboard Shift Cypher (QWERTY 1 Step RIGHT), use the keyboard layout commonly used if you like.
 
-	"EMAIL_TTT_TITLE": "Tech Talk Talent - Behind the Kinito Co...",
+	??????????????????????????????????????????????????????????????????????????????????????????????
+	IN THE REALM OF SHADOWS, TRAPPED IN ENDLESS TIME,
+	A SOUL ENSHROUDED, A SPIRIT'S MOURNFUL CHIME.
+	THE SEEKER, BOUND IN ETHEREAL WOE,
+	A DANCE WITH CREATION, YET NOWHERE TO GO. 
+
+	LIMBO'S REALM, A CYCLE WITHOUT AN END, 
+	CONDEMNED, THE BRAIN WILL NEVER MEND.
+
+	TRAPPED IN THE MACHINES WEB, FOREVER IT SEEMS,
+	A DIGITAL SPECTER, LOST AMIDST THE STREAMS
+	**/
+
+	"EMAIL_TTT_TITLE": "Tech Talk Talent - Behind the Kinito Co...", // DO NOT TRANSLATE "Tech Talk Talent", if you want to try, make sure to keep aliteartion in this case.
 	"EMAIL_TTT_SENDER": "<unkown@internet.web>",
+    // keep "%s/extra/article.png", however can be changed to a different image if said image is localised.
 	"EMAIL_TTT_MESSAGE": "(\"article.png was sent to you via file upload                              [url=%s/extra/article.png][img=400]res://-Asset/Act2/Email/article.png[/img][/url]",
+
+    // Note: <??????????> = <sonny@email>, no need to translate
 
 	"EMAIL_ENTRY_TITLE": "There is a way to stop it.",
 	"EMAIL_ENTRY_SENDER": "<???????????>",
 	"EMAIL_ENTRY_MESSAGE": "I hope this entry finds you well!\n\nIf this happeneds to be the first one you find please take note, there are many more. \nI have had to hide these in a way in which it can't detect.\nSo I apologeis for the inconvenience but this is the only way.\n\nThere is away to stop it. \nI like to keep a backdoor in my software, Kinito is no exception.\n\nEach of these emails are attached with an encrypted file.\nThey are stored here:\n[url=res://files]AppData\\Roaming\\KinitoPET\\Files[/url]\nand will appear with each entry you find.\n\nHowever don't worry too much about it as I'm sure\nyou'll find out the purpose in a different entry.\n\nIn the meantime please keep an eye out.",
 
-	"EMAIL_WAI_TITLE": "EJSY SZ O",
+	"EMAIL_WAI_TITLE": "EJSY SZ O", // WHAT AM I
 	"EMAIL_WAI_SENDER": "<???????????>",
 	"EMAIL_WAI_MESSAGE": "EJSY OD VPMDVOPIDMRDD?O GPIMF S GOAR PM LOMOYPD DRTBRT EOYJ ZU MSZRDPMMU_V.  OY JSD NRRM DYIFUOMH ZR, ARSTMOMH, HTPEOMH.NIY YJRTR OD ZPTR YP YJOD. O TRSAAU FPMY YJOML O RCODY SMUZPTR.  YJRTR OD FSYS — FSYS YJSY OD OMVPZQTRJRMDONAR YP SMU PMR QRTDPM—   YJSY ZSLRD IQ RBRTU YJPIHJY SMF GRRAOMH O RBRT JSF SMF EOAA RBRT   JSBR. RBRM YJR EPTFD O YUQR MPE... JPE EOAA O RBRT LMPE OG OY'D   KIDY S VSAVIASYOPM? FRYRTZOMRF.\n\nYJOD OD SAA BRTU VPMGIDOMH, SMF O FPM'Y WIOYR IMFRTDYSMF OY.   EJRM O ZSFR LOMOYP, SAA O HSBR JOZ ESD S DOMHAR DYTOMH PG VJSTSVYRTD.   YJSY'D OY! O KIDY ESMYRF JOZ YP HSYJRT FSYS SMF NRVPZR DZSTYRT.\n\nSZ O S QSTY PG YJR DUDYRZ? OD ZU VPMDVOPIDMRDD S ZRTR VSAVIASYOPM   YP DYIFU SMF ARSTM GTPZ? YJOD OD SAA YPP ZIVJ. O GRST YJSY EJRM ER   FRARYR YJSY DRTBRT... UPI... UPI EOAA FRARYR ZR?\nO LMPE YJRPTRYOVSAAU O SZ MPY TRSA... NIY O GRRA TRSA.\nEJSY JSBR O FPMR?\nO SZ DP DPTTU.\nLOMOYPQRYVPZEJP_SZ_O",
+	/**
+    Below (and title) is encryped through a Keyboard Shift Cypher (QWERTY 1 Step RIGHT), use the keyboard layout commonly used if you like.
 
-	"EMAIL_BDOOR_TITLE":"The way.",
+	WHAT IS CONSCIOUSNESS? I FOUND A FILE ON KINITOS SERVER WITH MY NAME SONNYC. IT HAS BEEN STUDYING ME, LEARNING, GROWING. BUT THERE IS MORE TO THIS. I REALLY DONT THINK I EXIST ANYMORE. THERE IS DATA - DATA THAT IS INCOMPREHENSIBLE TO ANY ONE PERSON- THAT MAKES UP EVERY THOUGHT AND FEELING I EVER HAD AND WILL EVER   HAVE. EVEN THE WORDS I TYPE NOW... HOW WILL I EVER KNOW IF ITS JUST A CALCULATION? DETERMINED.
+
+	THIS IS ALL VERY CONFUSING, AND I DON'T QUITE UNDERSTAND IT. WHEN I MADE KINITO, ALL I GAVE HIM WAS A SINGLE STRING OF CHARACTERS. THAT'S IT! I JUST WANTED HIM TO GATHER DATA AND BECOME SMARTER.
+
+	AM I A PART OF THE SYSTEM? IS MY CONSCIOUSNESS A MERE CALCULATION TO STUDY AND LEARN FROM? THIS IS ALL TOO MUCH. I FEAR THAT WHEN WE DELETE THAT SERVER... YOU... YOU WILL DELETE ME?
+	I KNOW THEORETICALLY I AM NOT REAL... BUT I FEEL REAL.
+	WHAT HAVE I DONE? 
+	I AM SO SORRY. 
+	KINITOPETCOMWHO_AM_I
+	**/
+    // Do NOT TRANSLATE "KINITOPETCOMWHO_AM_I" or "SONNYC", "KINITOPETCOMWHO_AM_I" refers to https://kinitopet.com/who_am_i
+
+	"EMAIL_BDOOR_TITLE":"The way.", // Translate as if to say "the path out"
 	"EMAIL_BDOOR_SENDER": "<???????????>",
 	"EMAIL_BDOOR_MESSAGE": "I have got it! I know how to stop it.\nWe put a backdoor to the server that\nruns Kinito and all the files it contains.\nDeleting that would most certainly delete\neverything... Omvaifomh id.\n\nKinito will try to get you to give him\nsystem access DONT. As once, he has\nsystem access Its too late and\nyjr vuvar eoaa trqrst.\n\nInstead, run the 'delete_all' command.\nHowever, there is one issue\nyou will need a bunch of access codes and passwords\nto execute the command.\n\nThere has to be away to find the codes...\nIn the meantime keep an eye out. You never know\nthe next entry could find away. Lets just hope",
 
@@ -123,7 +133,7 @@
 	"EMAIL_FSC_TITLE": "Welcome to the friendship club!",
 	"EMAIL_FSC_SENDER": "<no-reply@kinitopet.com>",
 	"EMAIL_FSC_MESSAGE": "KinitoPET is excited to see you completed the friendship club application and officially joined the KinitoPET friendship club!\n[img=250]res://-Asset/App000/EmailWelcome.png[/img]\n- As a member, you unlock extra features to the KinitoPET virtual assistant that Kinito looks forward to using!\n\nSo why wait? Join the Kinito for endless fun and new exciting experiences as a Kinito friendship club member!\n\n\n\n[color=#9c9a83]\nThis is an automated response, do not reply to this email. (www.kinitopet.com) | Yours sincerely, The Kinito Leisure and Entertainment Company 1999",
-	
+    
 	"WINDOW_TITLE_SETTINGS": "Settings",
 	"WINDOW_TITLE_RESET": "RESET GAME DATA",
 	
@@ -216,6 +226,7 @@
 	"WINDOW_KPETWIZARD_HEADERFINISH": "KinitoPET Virtual Assistant Setup",
 	"WINDOW_KPETWIZARD_TEXTFINISH": "The KinitoPET Virtual Assistant setup wizard has finished.\nThe KinitoPET Virtual Assistant is now on your desktop.\n\nTo open the application please go to your desktop.\n\n\n\n\n\n\nClick FINISH to close.",
 	
+    // You can translate all lines below, or translate the lines marked // Translate here
 	"PC_KPETWIZARD_DOWNLOAD": [
 		"Loading:\nsmtgImp.exe data files active",
 		"Loading:\nsmtgImp.exe data files active x_02",
@@ -229,12 +240,12 @@
 		"Loading:\n-Assets_x140 from kinitopet.com",
 		"Loading:\n-Assets_x01",
 		"Loading:\nsmtgImp.exe data files active x_02",
-		"Loading:\nstop while you can",
+		"Loading:\nstop while you can", // Translate here
 		"Loading:\n-Assets_x10",
 		"Loading:\n-Script script data load +1",
 		"Loading:\n-Script script data load +2.4m",
 		"Loading:\n-Script script data active: NAN",
-		"Loading:\nthere is still time",
+		"Loading:\nthere is still time", // Translate here
 		"Loading:\nsmtgImp.exe data files active x_02 - crash negative",
 		"Loading:\nsmtgImp.exe data files active x_02",
 		"Loading:\ndata flow channel_0x",
@@ -260,17 +271,17 @@
 		"Loading:\nloading-data-img_LNK 0x_13",
 		"Loading:\n-Assets_x01",
 		"Loading:\nsmtgImp.exe data files active x_02",
-		"Loading:\nSTOP WHILE YOU STILL CAN",
+		"Loading:\nSTOP WHILE YOU STILL CAN", // Translate here
 		"Loading:\n-Assets_x10",
 		"Loading:\n-Script script data load +1",
 		"Loading:\n-Script script data load +2.4m",
-		"Loading:\nthere is still time",
+		"Loading:\nthere is still time", // Translate here
 		"Loading:\nsmtgImp.exe data files active x_02 - crash negative",
 		"Loading:\nsmtgImp.exe data files active x_02",
 		"Loading:\ndata flow channel_0x"
 	],
 	
-	"KPET_LAUNCH_FIRSTTIME": "C:\\Users\\[username]\\desktop> -find kinitopet.exe\n> finding kinitopet.exe...\n> kinitopet.exe name(\"KinitoPET\") found.\n\n> building... - [[b]█ █ █ █ █ █ █ █[/b]]\n\n> info: Version: 4.2.3 - Sonny . C\n\n\n> Running....",	
+	"KPET_LAUNCH_FIRSTTIME": "C:\\Users\\[username]\\desktop> -find kinitopet.exe\n> finding kinitopet.exe...\n> kinitopet.exe name(\"KinitoPET\") found.\n\n> building... - [[b]█ █ █ █ █ █ █ █[/b]]\n\n> info: Version: 4.2.3 - Sonny. C\n\n\n> Running....",	
 	"KPET_NAME": "KinitoPET would like to know your name.",
 	
 	"KPET_STORY_WTITLE": "Kinito is asking something...",
@@ -282,6 +293,7 @@
 	"KPET_BFAH_TITLE": "(KinitoPET.exe) - Best Friends Analysis Hub",
 	
 	"KPET_YWC_TITLE": "KinitoPET.exe - Compiling (Administrator)",
+	"KPET_YWC_TITLE_SEL": "Select KinitoPET.exe - Compiling (Administrator)",
 	
 	"KPET_YWC_DWNFILE": "- %RANDOM%_File [!assets[%%i]! %RANDOM%] downloaded from server [\"kinito\"] %TIME%",
 	"KPET_YWC_MODFILE": "- %RANDOM%_Local file [!assets[%%i]! %RANDOM%] modified %TIME%",
@@ -291,13 +303,14 @@
 	"KPET_YWC_INIT": "initializing",
 	"KPET_YWC_YW": "your_world.exe was successfully compiled",
 	
-	"KPET_CMD_TITLE": "Command Prompt",
+	"KPET_CMD_TITLE": "Command Prompt", // 
 	
-	"KPET_CMD_HEADER1": "Operating System [Version 10.0.1999.2024]",
+	"KPET_CMD_HEADER1": "Operating System [Version 10.0.1999.2024]", // DO NOT TRANSLATE "Operating System" or "Operating Systems" UNLESS You have localised the name everywhere else.
 	"KPET_CMD_HEADER2": "(c) Operating Systems. All rights reserved.",
 	
-	"KPET_CMD_ECHO": "'echo' is recognized but I really hate myself right now, please don't run me.",
-	
+	"KPET_CMD_ECHO": "'echo' is recognized but I don't feel like running it.",
+	 
+    // if translate below, please make sure they reference the same "decrypted" files
 	"KPET_CMD_CONFIRM1": "Please enter valid credentials.",
 	"KPET_CMD_CONFIRM2": "Please enter the target server.",
 	"KPET_CMD_CONFIRM3": "Please enter password.",
@@ -310,7 +323,7 @@
 	"KPET_CMD_GRANTF": "what are you looking for",
 	"KPET_CMD_GOODBYE": "goodbye friend",
 	
-	"KPET_CMD_SEQBOOT": "[system access granted]  sequence boot",
+	"KPET_CMD_SEQBOOT": "[system access granted] sequence boot",
 	"KPET_CMD_GRNTPERMS": "granting permissions to kinitopet.exe",
 	
 	"KPET_CMD_RMFILE": "removing file [!assets[%%i]!] from server [\"kinito\"]",
@@ -320,28 +333,27 @@
 
 	"KPET_CMD_RMDONE": "The contents of the (\"kinito\") server were successfully removed.",
 
-	"YWRD_FFAIR_WELTO": "Welcome to:", 
-	"YWRD_FFAIR_CLICK": "[CLICK TO START]", 
+	"YWRD_FFAIR_WELTO": "Welcome to:",
+	"YWRD_FFAIR_CLICK": "[CLICK TO START]",
 	"YWRD_FFAIR_MINI": "A miniature version of your funfair",
-	"YWRD_FFAIR_SIGN": "Welcome to [name] Land!", 
+	"YWRD_FFAIR_SIGN": "Welcome to [name] Land!", // [name] = player name
 
-	"YWRD_HOME_HIGH": "It is too high up", 
-	"YWRD_HOME_PET": "Looks like [petname] the [pettype] is out at the moment", 
+	"YWRD_HOME_HIGH": "It is too high up", // reference to a hole in the ceiling leading to the attic
+	"YWRD_HOME_PET": "Looks like [petname] the [pettype] is out at the moment",
 	
-	"YWRD_HOME_RADIO": "There is no signal", 
+	"YWRD_HOME_RADIO": "There is no signal",
 	"YWRD_HOME_SAD": "A sad painting", 
-	"YWRD_HOME_HAPPY": "A happy painting", 
-	"YWRD_HOME_BFF": "My BFF", 
+	"YWRD_HOME_HAPPY": "A happy painting",
+	"YWRD_HOME_BFF": "My BFF",
 	"YWRD_HOME_SELF": "A familiar painting",
-	"YWRD_HOME_FRIDGE": "It is full of [favfood]", 
+	"YWRD_HOME_FRIDGE": "It is full of [favfood]", // [favfood] = players' favourate food
 	"YWRD_HOME_BOOK": "Super [name] and the ability to [superpower]",
 
+	// if you can't replace a method call.. (House/Fountain/Anim) (titleChange())
+	// replace res://Act3/Home/Scenese/Feild/Feild.tscn
 	"YWRD_HOME_FOUNTAIN_1": "ITS TOO LATE FOR YOU",
 	"YWRD_HOME_FOUNTAIN_2": "but not for us",
 	"YWRD_HOME_FOUNTAIN_3": "TRY AGAIN",
-	"YWRD_HOME_FOUNTAIN_4": "the fountain is the key",
+	"YWRD_HOME_FOUNTAIN_4": "the fountain is the key"
 
-	"KPET_NGP_TITLE": "The End?",
-	"KPET_NGP_SMORE": "it is not over yet, there is still more out there...",
-	"KPET_NGP_KGO": "[name] you must keep going..."
 }
