@@ -129,9 +129,9 @@ func _show_localized():
 		last_path = path
 
 func _patch_computer_app(app_name, localized_name):
-	if get_parent().get_parent().has_node("0/PC/Aspect/"+app_name):
+	if get_parent().get_parent().get_node("0").get_child(0).has_node("Aspect/"+app_name):
 		print_log("patching app: " + app_name)
-		var app = get_parent().get_parent().get_node("0").get_node("PC/Aspect/"+app_name)
+		var app = get_parent().get_parent().get_node("0").get_child(0).get_node("Aspect/"+app_name)
 		app.get_node("Drag/Title/dks_title").bbcode_text = "[center]" + kinito_loc.kinito_common_text[localized_name]
 		app.get_node("Drag/Title/Shadow/dks_title").bbcode_text = "[center]" + kinito_loc.kinito_common_text[localized_name]
 		app.get_node("Title/dks_title").bbcode_text = "[center]" + kinito_loc.kinito_common_text[localized_name]
@@ -140,6 +140,7 @@ func _patch_computer_app(app_name, localized_name):
 var patched_boot_credits = false
 var patched_boot_screen = false
 var patched_password_text = false
+var pc_name = ""
 func _patch_app000():
 	if Tab.data["open"][0] == true and get_parent().get_parent().has_node("0"):
 		var node_0 = get_parent().get_parent().get_node("0")
@@ -162,8 +163,12 @@ func _patch_app000():
 		if !patched_password_text and node_0.has_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s2/LoginScreen/PasswordBox/Password TextEdit"):
 			#$CanvasLayer/ColorRect/RichTextLabel2.bbcode_text = "Path\n\n" + kinito_loc.kinito_common_text["COMMON_PASSWORD"]
 			node_0.get_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s2/LoginScreen/PasswordBox/Password TextEdit").placeholder_text = kinito_loc.kinito_common_text["COMMON_PASSWORD"]
-			
-		if !patched_desktop and get_parent().get_parent().has_node("0/PC/Aspect/"):
+		
+		# Due to scene swapping, duplicate names would get @PC@XXX instead to make it "unique" before the old one is removed
+		if patched_desktop and get_parent().get_parent().get_node("0").get_child_count() > 0 and get_parent().get_parent().get_node("0").get_child(0).name != pc_name:
+			print_log("Detected scene swap, repatching.")
+			patched_desktop = false
+		if !patched_desktop and get_parent().get_parent().get_node("0").get_child_count() > 0 and get_parent().get_parent().get_node("0").get_child(0).has_node("Aspect"):
 			_patch_computer_app("My_Computer", "PC_APPS_MYCOMPUTER")
 			_patch_computer_app("Settings", "PC_APPS_SETTINGS")
 			_patch_computer_app("The_Internet", "PC_APPS_INTERNET")
