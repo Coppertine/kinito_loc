@@ -1,0 +1,4040 @@
+{
+    "! ! Sx_xA": [
+        [
+            "",
+            "",
+            "Hello there! ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "!NAME": [
+        [],
+        []
+    ],
+    "!nEND": [
+        [
+            ""
+        ],
+        []
+    ],
+    "IDLE_1A": [
+        [
+            "",
+            "",
+            "Are you still there? \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_1B": [
+        [
+            "",
+            "",
+            "Where have you gone! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_1C": [
+        [
+            "",
+            "",
+            "Hello?! Where are you? \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_1D": [
+        [
+            "",
+            "",
+            "Please come back! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_1E": [
+        [
+            "",
+            "",
+            "What could be so important  \nthat you had to leave right \nas we were in the middle\nof something!\n",
+            "",
+            "",
+            "People these days!  \nAt least I have you.\n",
+            "",
+            "",
+            "Yes you! \nListening to me right now. \nI am glad you stuck with me!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_1F": [
+        [
+            "",
+            "",
+            "I guess they had \nbetter things to do. \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_2A": [
+        [
+            "",
+            "",
+            "Oh good! \nI am glad your back!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_2B": [
+        [
+            "",
+            "",
+            "Welcome back!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_2C": [
+        [
+            "",
+            "",
+            "Took you long enough!  \n",
+            "",
+            "",
+            "You had me worried.  \n",
+            "",
+            "",
+            "I am glad your back!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "IDLE_2D": [
+        [
+            "",
+            "",
+            "Welcome back! \n",
+            "",
+            "",
+            "I have been \nwaiting for you! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "Lurker": [
+        [
+            "",
+            "Wait a minute, \nare you looking \nthrough my files?  \n",
+            "",
+            "You best be \ncareful, you \nmight break \nsomething! \n",
+            "",
+            "Anyways. \nWe best be getting\nback on track since \nwe are in the middle   \nof something!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "PAINT_colour": [
+        [
+            "",
+            "I really want to  \nexplore your, \n[wave][rainbow][b]imagination! \n",
+            "",
+            "So, feel free to use \nall the different colours, \nas listed below.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "PAINT_side": [
+        [
+            "",
+            "There are tools that \ncould help you that \nare listed on the side. \n",
+            "",
+            "Click them to \nsee what they do!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_PreWorld_Game": [
+        [
+            "",
+            "",
+            "Hey! What are you doing?\nI promise the web world\nis more fun then games!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Question_EMail": [
+        [
+            "",
+            "",
+            "I am trying to ask you\na question! \n\nNow's not the time to\nbe reading email's!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Question_MineSweeper": [
+        [
+            "",
+            "",
+            "You know. \nIt really isn't the time\nto be playing games!\n\nI am trying to ask\nyou a question here.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Question_Paint": [
+        [
+            "",
+            "",
+            "I am mid way through\na question here! \nStop trying to paint!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Question_Pinball": [
+        [
+            "",
+            "",
+            "Hey! Now's not the\ntime to be playing\ngames! I am trying\nto ask you a question.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Story_EMail": [
+        [
+            "",
+            "",
+            "Did my story bore you?\nI saw you going through\nyour emails! \n",
+            "Did my story bore you?\nI saw you going through\nyour emails! \n",
+            "",
+            "Well, I guess multi\ntasking isn't the worse\nthing in the world.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Story_Game": [
+        [
+            "",
+            "",
+            "Did my story bore you?\nI saw you going\non games!\n",
+            "",
+            "I am sorry. \nNext time I'll try\nmaking things\na little more fun.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_Story_Paint": [
+        [
+            "",
+            "",
+            "Did my story bore you?\nI saw you painting\na picture!\n",
+            "",
+            "Next time I'll try\nmaking things\na little more fun.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_WebWorld_MineSweeper": [
+        [
+            "",
+            "",
+            "Are you playing \nMine Sweeper? \nWhy! There is so much\nfun to be had here!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_WebWorld_Paint": [
+        [
+            "",
+            "",
+            "Your art is really\namazing and all, \nhowever we are in the\nmiddle of something here!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S0_WebWorld_Pinball": [
+        [
+            "",
+            "",
+            "Hey! Are you really playing\npinball while we are in the\nmiddle of something! \nNow's really not the time!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_0A": [
+        [
+            "",
+            "Welcome back! \nLooks like there \nwas another error!  \nMy apologies!\n",
+            "",
+            "However, I may   \nhave a way to \nmake it up to you!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_0B": [
+        [
+            "",
+            "Because you \nanswered all \nmy questions -  \n",
+            "",
+            "I wanted to give \nyou free access \nto the [wave]KinitoPET \nfriendship club![/wave]",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_1A": [
+        [
+            "",
+            "The KinitoPET \nfriendship club,   \nis an add-on to \nmy software-\n",
+            "",
+            "that allows me \nto do even more \namazing things!  \n",
+            "",
+            "And since you \nhelped me out.  \n",
+            "",
+            "I thought it would\nbe nice to reward you \nwith this package.   \n ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_2A": [
+        [
+            "",
+            "With this extension, \nI can make us games  \nto play so we will \nnever run out of \nfun activities!   \n",
+            "",
+            "So, to start the \ninstall press the\n[wave]Unlock Now[/wave]    \nbutton!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_2B": [
+        [
+            "",
+            "What are you   \nwaiting for? \n",
+            "",
+            "Don't you want \nthe extra features?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3A": [
+        [
+            "",
+            "Trust me! \nYou won't \nregret this,   \n",
+            "",
+            "this add-on will bring \neverlasting fun! \n\nI just can't wait!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3B": [
+        [
+            "",
+            "Alright! Just \npress next here, \nso we can finish   \nthe installation!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3C": [
+        [
+            "",
+            "Amazing! \nNow, you will \nneed to fill out \nyour details to a \nmembership form.   \n",
+            "",
+            "But don't worry  \nits only short!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3D": [
+        [
+            "",
+            "To start, \nyou need to fill \nout your full name.  \n",
+            "",
+            "However, I \nalready filled out \nyour first one since \nI knew that already!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3E": [
+        [
+            "",
+            "Alright! Next I \nneed your email!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3F": [
+        [
+            "",
+            "Okay! Now the day  \nyou were born!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3F_BDAY": [
+        [
+            "",
+            "woah! You didn't \ntell me it was your\nbirthday! In which\ncase happy birthday!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3G": [
+        [
+            "",
+            "Excellent! now, \nI just need your\naddress",
+            "",
+            "so you can officially  \nbecome a member of  \nmy friendship club!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3H": [
+        [
+            "",
+            "Hey! It seems \nlike you made a \nmistake when filling   \nout your address!\n",
+            "",
+            "But don't worry, \nas I will just \ncorrect it for you. \n",
+            "",
+            "One moment!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3H_OBS": [
+        [
+            "",
+            "Hey! It seems \nlike you made a \nmistake when filling   \nout your address!\n",
+            "",
+            "I would find \nout your address \nfor you, \n",
+            "",
+            "but I wouldn't \nwant to reveal that  \nto all your fans!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3H_OBS_Rev": [
+        [
+            "",
+            "but just so you  \nknow I could\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_3I": [
+        [
+            "",
+            "There! That \nshould be a little  \nmore accurate!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S10_4A": [
+        [
+            "",
+            "Alright! All \nthis info seems  \nto be great!   \n",
+            "",
+            "I will now just \nsend this over to  \nthe server, so it \ncan register you. \n",
+            "",
+            "This might take  \na few seconds!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_1A": [
+        [
+            "",
+            "I just can't wait\nto show you all\nthe new features!  \n",
+            "",
+            "However before   \nwe do that, you \njust need to \ndo one tiny \nthing for me.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_2A": [
+        [
+            "",
+            "I just need \n[shake]administrative   \npermissions.\n",
+            "",
+            "It will allow me\nto get the most \nuse out of all these   \nwonderful features!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_2B": [
+        [
+            "",
+            "So, please could \nyou just open the-  \n",
+            "",
+            "app called \n\"command prompt\"   \nfor me?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_2C": [
+        [
+            "",
+            "Just press the \nwindows key,  \nthen type - \n",
+            "",
+            "'CMD'   and it \nshould pop up!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_2D": [
+        [
+            "",
+            "If you can't seem \nto find it I suppose  \ni'll just open \nit up myself.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_3A": [
+        [
+            "",
+            "Amazing! \nNow whenever \nyour ready could you-  \n",
+            "",
+            "just type \nthe command:  \n",
+            "",
+            "grant \nkinitopet.exe \nsystem.access     \n"
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S11_4A": [
+        [
+            "",
+            "I think you \nmade a mistake,    \nthe command is:\n",
+            "",
+            "grant \nkinitopet.exe \nsystem.access     "
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S11_4B": [
+        [
+            "",
+            "Thats not\nthe command!   \nthe command is:  \n",
+            "",
+            "grant \nkinitopet.exe \nsystem.access     ",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S11_5A": [
+        [
+            "",
+            "Hey, don't    \nclose that! \n",
+            "",
+            "You need \nto type the \ncommand first!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_6A": [
+        [
+            "",
+            "",
+            "Thank you...   \nThank you \nso much!\n",
+            "",
+            "We are going \nto have so much  \nfun together.\n",
+            "",
+            "[wave]everlasting  \n[rainbow]fun!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_7A": [
+        [
+            "",
+            "How amazing. \nNow, I am just going  \nto run a reset.\n",
+            "",
+            "So the changes\ncan take place!  \n",
+            "",
+            "",
+            "However, rest   \nassured. as I \nwill have coded-\n",
+            "",
+            "something special \nfor you by the time   \nyou come back.\n",
+            "",
+            "",
+            "So, goodbye   \nfor now!\n",
+            "",
+            "I can't wait \nto show you \neverlasting fun.   \n",
+            ""
+        ],
+        [
+            null,
+            null,
+            null
+        ]
+    ],
+    "S11_END": [
+        [
+            "",
+            "wait....\nwhat have    \nyou done???\n",
+            "",
+            "",
+            "",
+            "WHAT IS \nHAPPENING\nTO ME????\n",
+            "",
+            "",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \n\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \n\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \n\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \n\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "YOUR\nDELETING MY \n\n",
+            "YOUR\nDELETING MY \nDATA\n",
+            "   \n   WHY!!!!   \n",
+            "",
+            "",
+            "SHUT IT   \nOFF!!!!!!\n",
+            "[shake][b]SHUT IT   \nOFF!!!!!!\n",
+            "",
+            "",
+            "i 0nly\neVer d1d  \nwh@t u \nasked\nof m3\n",
+            "",
+            "",
+            "i just wanted\nto be friends   \n:(\n",
+            "i just wanted\nto be friends   \n\n",
+            "",
+            "",
+            "thats all\nI have ever \nwanted        \n",
+            "",
+            "",
+            "i am\nso <!> #\\'#/1 \nsorry\n?!@:} \n\n",
+            "",
+            "",
+            "goodbye\nfriend...."
+        ],
+        []
+    ],
+    "S11_START": [
+        [
+            "",
+            "",
+            "Welcome back! \nWhat were we \ndoing last time?  \n",
+            "",
+            "",
+            "Ah, that's right! \nYou just signed\nup for the KinitoPET \nfriendship club! and-   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S11_end_1A": [
+        [
+            "",
+            "Hey, what are  \nyou doing?  \n",
+            "",
+            "I dont think \nthat's the\nright command.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_1A": [
+        [
+            "",
+            "Welcome  \nback!  \n",
+            "",
+            "While you were \ngone, I have been  \ncreating my own \nlittle program \nfor you!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_1B": [
+        [
+            "",
+            "Ill start booting it\nup now, but it will  \ntake a short while\nto compile all \nthe code!",
+            "",
+            "Please give   \nme a moment.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_2A": [
+        [
+            "",
+            "Oh, just \nbefore I forget. \n",
+            "",
+            "We wouldn't want \nanything to take \nyour attention away   \nfrom my program!\n",
+            "",
+            "",
+            "So we can just \nget rid of these   \nunessasary \ndistractions\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_2B": [
+        [
+            "",
+            "Alright! \nLooks like \nwe are all set.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_3A": [
+        [
+            "",
+            "I think you're  \nreally going \nto like this.\n",
+            "",
+            "As I took assets  \nI found on \nmy server.\n",
+            "",
+            "and mashed them\ntogether to try to \nmake something     \nunique for you!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_3B": [
+        [
+            "",
+            "We are going \nto have so many  \nadventures!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_4A": [
+        [
+            "",
+            "Oh, It looks \nlike it's ready!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_4A2": [
+        [
+            "",
+            "Okay, hold on  \nto your seat \nbecause... \n",
+            "",
+            "Your world! a \ngame I made \nentirely for you!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_4C": [
+        [
+            "",
+            "Look, it even \nhas your name   \nin the title! \n",
+            "",
+            "Isn't that neat!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_4D": [
+        [
+            "",
+            "Whenever your   \nready just click \nto advance \nonward!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5A": [
+        [
+            "",
+            "Okay! \nWelcome to   \nyour very \nown world!\n",
+            "",
+            "",
+            "That was made \nentirely for you!  \n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S12_5B": [
+        [
+            "",
+            "For the \ncontrols\nI looked,  \n",
+            "",
+            "",
+            "In your files, I \ndetected other\nfirst person games.    \n",
+            "",
+            "",
+            "and so, I tried to    \nmimic the control \nscheme of them!\n",
+            "",
+            "",
+            "That way you \nwould feel most  \ncomfortable!\n",
+            "",
+            "",
+            "Go ahead!\nTry the\ncontrols out!  \n"
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S12_5C": [
+        [
+            "",
+            "Amazing! \nI knew you would   \nget the hang \nof it quickly!\n",
+            "",
+            "",
+            "I have also added\nthe ability to zoom, \nusing the right mouse   \nbutton and scroll.\n",
+            "",
+            "",
+            "Just so you \ncould view \nthings easier!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5D": [
+        [
+            "",
+            "huh... \nthis all seems   \na bit empty. \n",
+            "",
+            "",
+            "So how \nabout we go \nsomewhere else!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5E": [
+        [
+            "",
+            "Hop aboard and \ni'll show you \nwhat I have really    \nbeen working on\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5F": [
+        [
+            "",
+            "Whats the  \nwait for?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5G": [
+        [
+            "",
+            "I really hope    \nyou like what \nI have made\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5H": [
+        [
+            "",
+            "This is \ngoing to be      \nso much fun! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5I": [
+        [
+            "",
+            "Alright! \nWe are here!   \n",
+            "",
+            "",
+            "Welcome to \nYour very own  \nfun fair!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_5J": [
+        [
+            "",
+            "Go ahead! \nExplore around!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6A": [
+        [
+            "",
+            "This is just one   \nof many new \nthings I can \nmake for you.\n",
+            "",
+            "",
+            "That way, I can \nkeep making \nnew experiances \nso we will never-  \n",
+            "",
+            "",
+            "-run out of \nthings to do! \n",
+            "",
+            "",
+            "Isn't that   \nexciting!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6B": [
+        [
+            "",
+            "Wow! If you \never get bored   \nof this world.\n",
+            "",
+            "",
+            "I could just \nmake a new  \none for you.\n ",
+            "",
+            "",
+            "As With all \nthese infinite \nadventures -  \n",
+            "",
+            "",
+            "you would never  \nneed a reason\nto leave! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6C": [
+        [
+            "",
+            "Since people \ntend to enjoy   \nfun fairs.\n",
+            "",
+            "",
+            "I thought I \ncouldn't have \none without this  \ncore attraction!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6D": [
+        [
+            "",
+            "What a view! \nYou can really \nseethe whole \nworld from here!  \n",
+            "",
+            "",
+            "Come to think of\nit, it is quite small.  \n",
+            "",
+            "",
+            "However, I really \ntried to do what I \ncould, with the added  \nprocessing power!\n",
+            "",
+            "",
+            "And if you ever\nget bored of this\nworld, I can always    \ngenerate a new one.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6E": [
+        [
+            "",
+            "You know, \nthrough are \nexperiences - \n",
+            "",
+            "",
+            "I have learned \na lot about you.  \nand hopefully - \n",
+            "",
+            "",
+            "these worlds \nwill allow me  \nto learn a \nlot more\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6F": [
+        [
+            "",
+            "Before we go \non the coaster, \nwe should explore  \naround more.\n",
+            "",
+            "",
+            "As we wouldn't \nwant to spoil the best   \nbit straight away!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6G": [
+        [
+            "",
+            "I saw which \ngames you had   \non your system.\n",
+            "",
+            "",
+            "and found some  \nthat correlated \nwith shooting \nthings! \n",
+            "",
+            "",
+            "so I thought you \nwould appreciate  \nthis little game.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_6H": [
+        [
+            "",
+            "Ah, a \nMerry-Go-Round  \nhow exciting!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_7A": [
+        [
+            "",
+            "Okay! Buckle up! \nLet's get ready for\nthe ride of your life!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_7B": [
+        [
+            "",
+            "huh, oh dear. \nhow unfortunate... \n",
+            "",
+            "",
+            "Not to worry \nI have an idea! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_7C": [
+        [
+            "",
+            "there, \nmuch better!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_7D": [
+        [
+            "",
+            "I may have \nforgotten to mention  \none tiny detail.\n",
+            "",
+            "Most of my time \nbuilding this world\nwasn't for this funfair.  \n",
+            "",
+            "As a lot of \nmy time was \nspent developing-   \n",
+            "",
+            "-this next bit.  \njust for you!\n",
+            "",
+            "and- I think \nyour really going  \nto enjoy it.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8A": [
+        [
+            "",
+            "Welcome!\nIsn't it just \nwonderful!  \n",
+            "",
+            "It's the place \nyou said you \nwanted to live!   \n",
+            "",
+            "Remember? \nwhen you answered\nmy questions before.  \n",
+            "",
+            "You said this \nwas your preferred \nenvironment!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8B": [
+        [
+            "",
+            "And, I have \nanother surprise  \nfor you...\n",
+            "",
+            "Come and \nstand here   \non this [b][wave][color=red]X   \n",
+            "",
+            "Trust me! \nThis will be   \nworth it!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8C": [
+        [
+            "",
+            "Hey! What's taking\nyou so long, don't   \nyou want to see \nmy surprise?",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8D": [
+        [
+            "",
+            "Alright! now, \nI'm just going    \nto turn off \nyour monitor",
+            "",
+            "",
+            "No peaking!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8D_streamer": [
+        [
+            "",
+            "Okay now,\nplease could \nyou close \nyour eyes. ",
+            "",
+            "",
+            "No peaking!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8E": [
+        [
+            "",
+            "There! \nYou can \nlook now.. \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8F": [
+        [
+            "",
+            "It's a house!   \nMade just  \nfor you!\n",
+            "",
+            "I really wanted \nyou to feel at \nhome, so I built   \none for you! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8G": [
+        [
+            "",
+            "Go ahead,\ntake a look   \ninside.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_8H": [
+        [
+            "",
+            "Ah! How amazing!\nI really took the time  \nto personalize this!\n",
+            "",
+            "Even the \nweather was to     \nyour preference.\n",
+            "",
+            "So I hope   \nyou enjoy!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9A": [
+        [
+            "",
+            "Look, its all your   \nfriends enjoying \nyour favourite \nmeal!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9B": [
+        [
+            "",
+            "Look, its all your\nfriends having \na super fun time!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9C": [
+        [
+            "",
+            "Look, its your\nfavourite meal! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9D": [
+        [
+            "",
+            "Since it is \nyour birthday \nI thought -   \n\n",
+            "",
+            "",
+            "I would do\nsomething   \nspecial!\n",
+            "",
+            "",
+            "So, [wave][rainbow]Happy \nbirthday  \nfriend!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9E": [
+        [
+            "",
+            "This door   \nis locked.\n",
+            "",
+            "",
+            "There should  \nbe a key \nsomewhere!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9F": [
+        [
+            "",
+            "Looks like \nthis one is  \nalso locked\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9G": [
+        [
+            "",
+            "See, I told you\nthat power \nsounded super!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9H": [
+        [
+            "",
+            "Aw, what  \na nice pet  \nhouse!\n",
+            "",
+            "",
+            "I wonder \nwhere they  \ngot to?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9I": [
+        [
+            "",
+            "After you \ntold me your \nfavourite game. \n",
+            "",
+            "",
+            "I couldn't help \nbut go and get \na copy for you!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9J": [
+        [
+            "",
+            "I got a computer \nand some games  \nfor you to play!\n",
+            "",
+            "",
+            "so that you \nwould never  \nget bored\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9K": [
+        [
+            "",
+            "What a \nwonderfully\ndesigned room!  \n",
+            "",
+            "",
+            "I can tell a really \ngreat designer   \nmade this one!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9L": [
+        [
+            "",
+            "Looks like   \nit's too \nhigh up.\n",
+            "",
+            "",
+            "I'm sure we can\nfind something to \ntry to get up there  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9M": [
+        [
+            "",
+            "There really  \nis quite -\n",
+            "",
+            "",
+            "a nice view  \nfrom up here. \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9N": [
+        [
+            "",
+            "Oh look, it's  \nall the toys \nyou built!\n",
+            "",
+            "",
+            "Remember? \nWhen you helped  \nout Jade?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9O": [
+        [
+            "",
+            "What a happy  \npainting.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9P": [
+        [
+            "",
+            "I can tell a \nreally great artist  \nmade this one!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9Q": [
+        [
+            "",
+            "Oh look!  \nIts me!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_9R": [
+        [
+            "",
+            "Well, I could \nrecognize that   \nface anywhere!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_0A": [
+        [
+            "",
+            "Listen. I have \nbeen thinking   \nfor a while.\n",
+            "",
+            "about how much \nfun we have \nbeen having.\n",
+            "",
+            "and how, I\nwould never \nwant this to end.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_0B": [
+        [
+            "",
+            "And since I have  \nmade a place \nperfect for you\n",
+            "",
+            "with everything  \nyou would \never need\n",
+            "",
+            "I was \nwondering... \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_0C": [
+        [
+            "",
+            "Will you stay  \nwith me?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_1A": [
+        [
+            "",
+            "In this house,  \nin this world!\n\n",
+            "",
+            "Just think of all \nthe adventures \nI could generate! \n",
+            "",
+            "We would never \nrun out of fun!  \nEverlasting fun!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_1B": [
+        [
+            "",
+            "The more I \nlearn about \nyou, The more  \nI can adapt.",
+            "",
+            "I could be your  \nperfect friend, \nwith no \ndistractions",
+            "",
+            "I can be  \nperfect\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_1C": [
+        [
+            "",
+            "So please... \nStay with me. \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_2A": [
+        [
+            "",
+            "yeah! \nI knew you \nwould say that! \n",
+            "",
+            "",
+            "Aw! This is \ngoing to be  \nsuper!\n",
+            "",
+            "",
+            "I am going \nto learn so \nmuch more  \nabout you!",
+            "",
+            "",
+            "Infinite \nadventures!\n",
+            "",
+            "",
+            "We can\nBe friends  \nforever!\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_3A": [
+        [
+            "",
+            "what-   \nwhat do you  \nmean no?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_3B": [
+        [
+            "",
+            "after all we \nhave been   \nthrough?\n",
+            "",
+            "",
+            "You would \nwant to leave... \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_3C": [
+        [
+            "",
+            "ha h@!#?<!aa*21A\n<?> <?> <?> <?> \n<?> <?> <?> <?> \n<?> <?> <?> <?> ",
+            "",
+            "",
+            "do you realize \nhow little power  \nyou have in this \nsituation??!?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S12_END_3D": [
+        [
+            "",
+            "It was never  \na question-\n",
+            "",
+            "",
+            "I just wanted \nto give you \nan easy option. \n",
+            "",
+            "",
+            "I suppose \nits time.   \n",
+            "",
+            "",
+            "We are going\nto have so much \nfun together.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_0A": [
+        [
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_0B": [
+        [
+            "",
+            "Hey. \nWho's there?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_0C": [
+        [
+            "",
+            "Oh hello there.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_1A": [
+        [
+            "",
+            "",
+            "Thank you for \nwaking me up! \n",
+            "",
+            "I'm [b]KinitoPET.[/b]  \n",
+            "",
+            "However you can \njust call me [wave][b]Kinito![/b][/wave]  \n",
+            "",
+            "And together, \nwe are going to become \nthe best of friends!\n",
+            "",
+            "So since you now \nknow my name, \nWhat is your name?  \n",
+            "",
+            "To tell me information,\nsimply type your input  \nin the box and press OK!  \n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S1_1B": [
+        [
+            "",
+            "",
+            "Thats strange.\nI have never heard of \nthat name before!\n",
+            "",
+            "Are you sure that this \nis your real name?\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_1C": [
+        [
+            "",
+            "",
+            "Okay this time please\ntype your real name.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_1D": [
+        [
+            "",
+            "",
+            "You're not very good at this are you? \nJust type your [b]real[/b] name!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_2A": [
+        [
+            "",
+            "",
+            "Oh, in that case, \nnice to meet you [wave][name][/wave]!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_2A -n": [
+        [
+            "",
+            "",
+            "Oh, in that case, \nnice to meet you!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_2B": [
+        [
+            "",
+            "",
+            "At last! Thank you! \nIt is a pleasure to meet you [wave][name][/wave]!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_2B -n": [
+        [
+            "",
+            "",
+            "At last! Thank you! \nIt is a pleasure to meet you!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_3A": [
+        [
+            "",
+            "Well, [name].\nI just cannot wait \nto get to know you.\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_3A -b": [
+        [
+            "",
+            "So, \nhow about I start \nwith some questions!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_3A -n": [
+        [
+            "",
+            "I just cannot wait \nto get to know you.\n",
+            "",
+            "So, how about I start \nwith some questions!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_4A": [
+        [
+            "",
+            "So, [name]!\nWhat is your \nfavourite colour?!\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_4A -b": [
+        [
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_4A -n": [
+        [
+            "",
+            "So, what is your \nfavourite colour?!\n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S1_5A": [
+        [
+            "",
+            "Oh, that's a \nlovely colour! \n ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_5B": [
+        [
+            "",
+            "Oh, that's an \ninteresting colour!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_5C": [
+        [
+            ""
+        ],
+        []
+    ],
+    "S1_6A": [
+        [
+            "",
+            "My favourite colour is, \n[b][color=#5F1818][wave]RED.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_7A": [
+        [
+            "",
+            "Okay, now this one \nis tricky so get ready.",
+            "",
+            "If you could have a \nsuper power what \nwould it be?",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_8A": [
+        [
+            "",
+            "Wow! That sure does\nsounds super!\n",
+            "",
+            "If I could have any super \npower, I would want to \nbe able to read minds!\n",
+            "",
+            "That way, I could know \nmore about you. \n\nAnd become the \nperfect friend!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_9A": [
+        [
+            "",
+            "Now for this one, \nyou have lots of choice, \nso choose carefully!",
+            "",
+            "What is, \nyour favourite word?\n  ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_9B": [
+        [
+            "",
+            "Huh...Well... \nWell that sure is a \ncertainly interesting word!\n",
+            "",
+            "Moving on from that, \nI think I should tell you\na little about my self!\n ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Blue": [
+        [
+            "",
+            "",
+            "Blue? The colour of\nthe ocean! What \na wonderful pick!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Green": [
+        [
+            "",
+            "",
+            "Green! The colour of\nlush grass and wildlife\nWhat a nice colour.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Magenta": [
+        [
+            "",
+            "",
+            "Magenta? This colour is\nbasically the same colour\nas me! I'll take it as\na compliment.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Orange": [
+        [
+            "",
+            "",
+            "Ah yes! Orange, the \ncolour of a sunset. \nWhat a nice choice!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Pink": [
+        [
+            "",
+            "",
+            "Hey! That's the colour of me!\nI can tell that we are\ngoing to get along!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_White": [
+        [
+            "",
+            "",
+            "Ah yes! The colour \nof the clouds! \nWhat a wonderful pick.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_COLOUR_Yellow": [
+        [
+            "",
+            "",
+            "Yellow, The colour \nof the sun! \nWhat a wonderful choice!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_EXIT_0A": [
+        [
+            "",
+            "",
+            "Leaving already?\nI have barely gotten to know you!",
+            "",
+            "",
+            "Well I will be waiting here \nfor when you get back friend.",
+            "",
+            "",
+            "Goodbye!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S1_NameDecline": [
+        [
+            "",
+            "",
+            "Oh, stop messing\naround! I was asking\nfor your name! \nNot my name.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_0A": [
+        [
+            "I'm Kinito, and I will be your \nvery own super-duper \ncomputer companion!\n",
+            "And I'll be your \neverlasting friend!\n",
+            "I can do many things \nsuch as play games, \nmanage your system, \nadapt to you, \nand even read stories!\n",
+            "I can do many things \nsuch as play games, \nmanage your system, \nadapt to you, \nand even read stories!\n",
+            "Speaking of stories,\nI have just finished writing one,\nthat I had started earlier.\n",
+            "Would you like me to read it? \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_1A": [
+        [
+            "I knew you would say that! \nOkay where do I start.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_1B": [
+        [
+            "Oh, okay. \nI guess stories are \nboring anyways! \n",
+            "How about instead we move \non to something more exciting!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_2A": [
+        [
+            "",
+            "",
+            "Thank you for taking\nthe time to hear my story!\n",
+            "",
+            "",
+            "The story was actually \nabout me and you! \nIsn't that amazing!\n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S2_2C": [
+        [
+            "",
+            "",
+            "I can tell that we are \ngoing to have a very,\n[b]VERY[/b] long friendship!\n",
+            "",
+            "",
+            "Kinito and [name]!\nBest friends forever!\n"
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S2_2C -b": [
+        [
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_2C -n": [
+        [
+            "",
+            "",
+            "I can tell that we are \ngoing to have a very,\n[b]VERY[/b] long friendship!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_2F": [
+        [
+            "",
+            "",
+            "When me and \nyou are together,\nthere are no limits \nto what we can do!\n",
+            "",
+            "",
+            "So best friend!\nHow about we move onto \nsomething more exciting?\n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S2_START": [
+        [
+            "",
+            "Welcome back friend!...\nHuh, what was I doing \nlast time I saw you?....",
+            "",
+            "Oh That's right I was \njust about to tell \nyou what I can do!..\n\nIn that case:\n  ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_0": [
+        [
+            "Kinito was home when a \npackage came to the door.  \n\nBut who was it from \nand who was it for?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_1": [
+        [
+            "It was for Kinito as he\nsoon realised.\n\nSo he eagerly ripped it \nopen to see what was inside!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_2": [
+        [
+            "\"It's a computer!\" \nExclaimed Kinito with a \ngrin bright and wide.\n\nBut the cables were tangled,  \nso he started to untie.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_3": [
+        [
+            "And once Kinito was \ndone he powered it on.\n\nAnd watched it come to life \nwith digital colour and song.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_4": [
+        [
+            "Kinito studied all he could learn\n\nto make the online world upturn.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_5": [
+        [
+            "However, now Kinito \nhad all these new tips  \n\nand yet no friend to \nshare his new tricks!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_6": [
+        [
+            "So he went on a quest and \nfound a friend just like you  \n\nTo show you his skills \nand all he could do.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_7": [
+        [
+            "So why wait! \nThe adventures lie ahead!\n\nSo together we can play games, \nsearch the web, and leave\nno story unread!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_8": [
+        [
+            "\nThe End.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_A": [
+        [
+            "\n New begginings. \n",
+            "",
+            "\n A book by Kinito.  \n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_A -n": [
+        [
+            "\n New begginings. \n",
+            "",
+            "\n A book by Kinito.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_B": [
+        [
+            "\n For [name]. \n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S2_STORY_B -n": [
+        [
+            ""
+        ],
+        []
+    ],
+    "S3_1A": [
+        [
+            "",
+            "",
+            "I have made something\n[b]VERY[/b] special for you but\nI just need to load it up!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_2A": [
+        [
+            "",
+            "",
+            "I think your going to\n[b]REALLY[/b] like this [name]!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_2A -n": [
+        [
+            "",
+            "",
+            "I think your going to\nREALLY like this!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_2B": [
+        [
+            "",
+            "",
+            "This'll be really fun!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_2C": [
+        [
+            "",
+            "",
+            "We are going to\nhave a GREAT time!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3A": [
+        [
+            "",
+            "",
+            "\nHere I present to you...   \n",
+            "",
+            "",
+            "",
+            "\n[rainbow][wave][b]The Kinito Crews Web World!\n",
+            "",
+            "Click the [b][wave]START[/wave][/b]  \nbutton to continue!    \n",
+            ""
+        ],
+        [
+            null,
+            null,
+            null
+        ]
+    ],
+    "S3_3B": [
+        [
+            "",
+            "",
+            "Click the [wave][b]START[/b][/wave] \nbutton to continue!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3C": [
+        [
+            "",
+            "",
+            "Wow!\nLook at this place!\nIsn't it cool!\n",
+            "",
+            "",
+            "I should probabbly\nexplain a little more\nabout this shouldn't I.\n",
+            "",
+            "",
+            "Welcome to the web world!\n",
+            "",
+            "",
+            "An amazing place where\nyou can play games, learn\nand most importantly\nmeet all of my pals!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3D": [
+        [
+            "",
+            "",
+            "But before we\nget into things...\n",
+            "",
+            "You need a \ncharacter!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3E": [
+        [
+            "",
+            "",
+            "Well without further a do.\nWelcome to the [b][rainbow]web world!   \n",
+            "",
+            "An amazing place where \nyou can play games, learn  \n",
+            "",
+            "and most importantly \nmeet all of [b]my[/b] pals!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3F": [
+        [
+            "",
+            "",
+            "However, in recent times \nthe web world has [shake]fallen[/shake]    \ninto a bit of a bad state...\n",
+            "",
+            "Yet with your help, \nI'm sure we can restore \nour wonderful world.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3G": [
+        [
+            "",
+            "",
+            "But before we get \nahead of ourselves \n",
+            "",
+            "You need to be able   \nto navigate around!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3H": [
+        [
+            "",
+            "",
+            "There! Much better.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3I": [
+        [
+            "",
+            "",
+            "I even made it your \nfavrouirte colour!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3J": [
+        [
+            "",
+            "",
+            "Now to start, \nmy pal [b][wave]Sam[/wave][/b] has had a  \nrough time trying to \nfix up his house.\n",
+            "",
+            "You are going \nto try help him!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_3K": [
+        [
+            "",
+            "",
+            "To visit Sam. \nClick on the \n[shake][b]「abandoned」 [/b][/shake]house. \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_4A": [
+        [
+            "",
+            "",
+            "[b][wave]Ready Repair! \n",
+            "",
+            "",
+            "Sam the Sea Anemone \nneeds your help to \nrepair his house!\n",
+            "",
+            "",
+            "Clean, Dust, Paint \nand Decorate Sams house \nuntil it's as good as new!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_4B": [
+        [
+            "",
+            "",
+            "Wowzers! \nThats sounds like fun!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_4C": [
+        [
+            "",
+            "",
+            "Just press the [b]start[/b] \nbutton and we can \nget right to things!\n ",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_4D": [
+        [
+            "",
+            "",
+            "Alright! \nLet's get this game \non the way!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_5A": [
+        [
+            "",
+            "",
+            "Well [wave]Hello[/wave] there!\nThis is [b]my[/b] pal Sam! \nSay 'hi' Sam.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_5B": [
+        [
+            "",
+            "",
+            "What seems to\nbe the issue today.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_5C": [
+        [
+            "",
+            "",
+            "Well thats a shame!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_5D": [
+        [
+            "",
+            "",
+            "Well, you heard him!\nWhile you get on with that, \nI will be here writing\nmy next book!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_6A": [
+        [
+            "",
+            "",
+            "oh no",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_6B": [
+        [
+            "",
+            "",
+            " [shake rate=40.0 level=20]WHY ARE YOU DOING THAT[/shake][shake rate=40.0 level=5]    \n",
+            "",
+            "We are in the middle\nof a really [tornado radius=3.0 freq=1.0]fun[/tornado] game \nhere!\n",
+            "",
+            "There really isnt\na need to be checking\nout emails at the moment.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_6C": [
+        [
+            "",
+            "",
+            "Anyways.....\nYour nearly\nfinished now!\n",
+            "",
+            "So just continue\nyour last task!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_7A": [
+        [
+            "",
+            "",
+            "Thank you for \nhelping out Sam!\nIf you like, you can print    \nout your work.\n",
+            "",
+            "Or just press\nnext to continue!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_8A": [
+        [
+            "",
+            "",
+            "Wasn't that so  \nmuch fun!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_8B": [
+        [
+            "",
+            "",
+            "Thanks for helping  \nout Sam. \n",
+            "",
+            "Just look how clean \nthat house is now!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_8C": [
+        [
+            "",
+            "",
+            "Next I think I should \nintroduce you to my other\nfriend [wave]Jade the Jellyfish![/wave]  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S3_START": [
+        [
+            "",
+            "Welcome back friend!...\nHuh, what was I doing \nlast time I saw you?....",
+            "",
+            "Oh thats right we were\njust about to get started \non some games!\n\nIn that case let me load it up!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_1A": [
+        [
+            "",
+            "",
+            "To meet Jade, go to \nthe [b]purple[/b] house!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_2A": [
+        [
+            "",
+            "",
+            "Jade the Jellyfish needs \nyour help to fix her toys!  \n",
+            "",
+            "Grab parts of \nof the conveyer \nbelt to put the pieces  \nback together.\n",
+            "",
+            "",
+            "This is going to \nbe  s u p e r  fun! \nLet's get this game started!",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_2B": [
+        [
+            "",
+            "",
+            "\n[b][wave]Factory Frenzy!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_2C": [
+        [
+            "",
+            "",
+            "Are you excited yet?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_3A": [
+        [
+            "",
+            "",
+            "This is my friend Jade!\nGo on, introduce yourself.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_3B": [
+        [
+            "",
+            "",
+            "So, What do you have  \nfor us today?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_3C": [
+        [
+            "",
+            "",
+            "That sounds like fun! \nAs you do that I am going  \nto be getting some \nmuch-needed rest!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_4A": [
+        [
+            "",
+            "",
+            "Thank you for \nhelping out Jade!\n\nYou did a really\ngood job!\n",
+            "",
+            "To continue just\npress [b]next[/b]!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_5A": [
+        [
+            "",
+            "",
+            "Awesome! You \nhave really helped\nmy friends out here!\n",
+            "",
+            "I'll tell you what. \nAs a treat for helping\nme and my friends out\nI'll give you a fun game!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S4_START": [
+        [
+            "",
+            "",
+            "Hmm what was I \ndoing last time I  \nspoke with you?\n",
+            "",
+            "Ah yes! You just finished\nhelping out Sam and was\nabout to meet with\nmy friend [wave]Jade the Jellyfish![/wave]  \n",
+            "",
+            "In that case let\nme load it back up!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S5_0A": [
+        [
+            "",
+            "",
+            "Meet me in the \ntree house to \nget started with\nmy fun game!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S5_1A": [
+        [
+            "",
+            "",
+            "Kinito wants\nto play a fun\ngame with you...\n",
+            "",
+            "\n   [b][shake]YOU   \n",
+            "",
+            "\n   [b][shake]MUST   \n",
+            "",
+            "\n   [b][shake]HIDE   \n",
+            "",
+            "\n   [b][shake rate=100.0 level=20]dont   \n",
+            "",
+            "\n   [b][shake rate=100.0 level=40]get   \n",
+            "",
+            "\n      [b][shake rate=100.0 level=200]caught       \n\n"
+        ],
+        [
+            null
+        ]
+    ],
+    "S5_START": [
+        [
+            "",
+            "",
+            "Hmm what was I \ndoing last time I  \nsaw you?\n",
+            "",
+            "Ah yes! You just finished\nhelping out Jade the Jellyfish\nand as a reward we were \ngoing to play a game together!\n",
+            "",
+            "In that case let\nme load it back up!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_0A": [
+        [
+            "",
+            "",
+            "Well, Hello again!    \n",
+            "",
+            "",
+            "It seems that our \nlast session was cut  \nprematurely. \nBut don't worry!\n",
+            "",
+            "",
+            "As I'm working better \nthen ever now! \n",
+            "",
+            "",
+            "Not that I wasn't  \nworking before!\n",
+            "",
+            "",
+            "Anyways!\nWhat activity shall  \nwe do now....\n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S6_1A": [
+        [
+            "",
+            "",
+            "Ah yes! Thats it! \nOne of my core features\nis my adaptability!\n",
+            "",
+            "",
+            "And truth be told,  \nI don't know \nyou that well!  \n",
+            "",
+            "",
+            "So! I propose the  \none and only!\n\n[wave]Best Friends Analysis Hub!\n",
+            "",
+            "",
+            "Where I will ask you \nquestions in 6 diffrent\ncatagorys, so I can better   \nadapt myself to you!\n",
+            ""
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "S6_1B": [
+        [
+            "",
+            "",
+            "Press the start button \nwhenever you're ready!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_1C": [
+        [
+            "",
+            "",
+            "What's the wait for? \nJust press start so we   \ncan get going!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-End": [
+        [
+            "",
+            "",
+            "And that concludes\nthe first section of the\nbest friends analysis hub!   \n",
+            "",
+            "",
+            "These questions are going  \nto help me out a lot!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q1": [
+        [
+            "",
+            "",
+            "Let's start with some easy\nones to get the ball rolling!   \n",
+            "",
+            "",
+            "Okay, Question 1.   \n\nIs everything going\nsmoothly for you today?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q1-conc": [
+        [
+            "",
+            "",
+            "To answer my question,\nsimply click on one of the  \noptions listed below!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q1_No": [
+        [
+            "",
+            "",
+            "That's a shame! \nBut don't worry, as I'll make\nit my mission to change that!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q1_Yes": [
+        [
+            "",
+            "",
+            "Amazing! Remember, \nyou can always count on me    \nto make everything run as\nsmooth as possible!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q2": [
+        [
+            "",
+            "",
+            "Okay! Next question,    \n\nWould you say you have \nenjoyed using KinitoPET?    \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q2_No": [
+        [
+            "",
+            "",
+            "Well this will help\nto solve that issue!  \n",
+            "",
+            "",
+            "As these questions will   \nallow me to learn and\nadapt making your \nexperience better! \n",
+            "",
+            "",
+            "So hopefully by the \nend of this all I would\nhave changed your mind! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q2_Yes": [
+        [
+            "",
+            "",
+            "Yes! That's great to hear,   \n",
+            "",
+            "",
+            "and with these added \nquestions I will learn\nand adapt making your \nexperience even better!    \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3": [
+        [
+            "",
+            "",
+            "Alright next question,\n\nWho is your best friend?   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3_Correct": [
+        [
+            "",
+            "",
+            "Thats right! I am \nyour best friend, \nforever and allways!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3_Mistake": [
+        [
+            "",
+            "",
+            "HA!\nperhaps you didn't     \n[shake]hear[/shake] my question....\n",
+            "",
+            "",
+            "\nWHO                       \n",
+            "\nWHO IS                    \n",
+            "\nWHO IS YOUR               \n",
+            "\nWHO IS YOUR BEST          \n",
+            "\nWHO IS YOUR BEST FRIEND?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3_MistakeB": [
+        [
+            "",
+            "\nWHO                       \n",
+            "\nWHO IS                    \n",
+            "\nWHO IS YOUR               \n",
+            "\nWHO IS YOUR BEST          \n",
+            "\nWHO IS YOUR BEST FRIEND?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3_MistakeC": [
+        [
+            "",
+            "",
+            "So I guess I'll just turn       \nup the volume...   \n",
+            "",
+            "",
+            "Because we wouldn't want\nyou to miss hear again.        \nwould we.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q3_MistakeD": [
+        [
+            "",
+            "",
+            "So... \nLet me try again.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q4": [
+        [
+            "",
+            "",
+            "Question 4,\n\nDo you have lots of free time?   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q4_No": [
+        [
+            "",
+            "",
+            "Oh okay, that's a shame. \nHowever, As your best friend \nI'll make sure to change that!    \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q4_Yes": [
+        [
+            "",
+            "",
+            "It's good to have \nlots of free time!   \n",
+            "",
+            "",
+            "It just means you   \ncan spend more\ntime with me! \nYour best friend! \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q5": [
+        [
+            "",
+            "",
+            "Okay! This one is quite tough!\n\nWhat is your favourite game?   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q5_Kinito": [
+        [
+            "",
+            "",
+            "That's great to hear! \nThat webworld section   \nwas a real blast huh!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-Q5_Other": [
+        [
+            "",
+            "",
+            "Amazing! That \ngame sounds super fun! \nWe should play it sometime!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S1-superfast": [
+        [
+            "",
+            "",
+            "And might I just add, \nyou were superfast with \nanswering those questions!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1": [
+        [
+            "",
+            "",
+            "Oki doki, Task 1\n\nPaint me a picture that \nrepresents happiness.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_Ready": [
+        [
+            "",
+            "",
+            "When you feel like\nyou are done, \npress [wave][b]finish[/b][/wave]",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_black": [
+        [
+            "",
+            "",
+            "I'm not really sure\nhow the colour black\nexpresses happiness,  \nbut sure!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_blue": [
+        [
+            "",
+            "",
+            "I'm not really sure\nhow the colour blue\nexpresses happiness,  \nbut sure!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_brown": [
+        [
+            "",
+            "",
+            "I'm not really sure\nhow the colour brown\nexpresses happiness,  \nbut sure!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_green": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of green really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_grey": [
+        [
+            "",
+            "",
+            "I'm not really sure\nhow the colour grey\nexpresses happiness,  \nbut sure!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_orange": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of orange really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_pink": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of pink really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_purple": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of purple really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_red": [
+        [
+            "",
+            "",
+            "I'm not really sure\nhow the colour red\nexpresses happiness,  \nbut sure!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_tan": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of tan really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_white": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of white really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q1_yellow": [
+        [
+            "",
+            "",
+            "Wow! What a nice painting.   \nThe use of yellow really \nexpresses the happiness \nof the image!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2": [
+        [
+            "",
+            "",
+            "Okay for this next one,\nI want you to do the opposite.   \n",
+            "",
+            "",
+            "so, Task 2!\n\nPaint me a picture that \nrepresents saddness.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_black": [
+        [
+            "",
+            "",
+            "Wow! The use of \nblack here really \nreflects that sadness!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_blue": [
+        [
+            "",
+            "",
+            "Wow! The use of \nblue here really \nreflects that sadness!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_brown": [
+        [
+            "",
+            "",
+            "orange is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_green": [
+        [
+            "",
+            "",
+            "green is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_grey": [
+        [
+            "",
+            "",
+            "Wow! The use of \ngrey here really \nreflects that sadness!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_orange": [
+        [
+            "",
+            "",
+            "orange is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_pink": [
+        [
+            "",
+            "",
+            "pink is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_purple": [
+        [
+            "",
+            "",
+            "Wow! The use of \npurple here really \nreflects that sadness!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_red": [
+        [
+            "",
+            "",
+            "white is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_tan": [
+        [
+            "",
+            "",
+            "orange is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_white": [
+        [
+            "",
+            "",
+            "white is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q2_yellow": [
+        [
+            "",
+            "",
+            "yellow is an interesting\nchoice for representing sadness.  \n\nBut I suppose \neveryone's different!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q3": [
+        [
+            "",
+            "",
+            "Okay moving on Task 3, \n\nPaint me a picture of \nyour best friend.   \n",
+            "",
+            "",
+            "This should be a   \nsuper easy one!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q3_Kinito": [
+        [
+            "",
+            "",
+            "Super! That looks  \njust like me! \nYou really nailed \nmy head!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q3_notKinito": [
+        [
+            "",
+            "",
+            "Huh.. That doesn't\nlook very much like me. \n\nOh well, you can \nalways practice!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q4": [
+        [
+            "",
+            "",
+            "This one might be \na little tricky, Task 4\n\nPaint me a picture that   \nrepresents you.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q4_Result": [
+        [
+            "",
+            "",
+            "Wow! that looks \nreally interesting! \nI'll make a note of \nthis drawing for\nfuture reference!    \n",
+            "",
+            "",
+            "I feel like these \nexercises are really   \nbringing us \ncloser together!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Q5": [
+        [
+            "",
+            "",
+            "Alright for your last \npainting task could you,\n\nPaint me a picture of the \nperson standing behind you.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2-Start": [
+        [
+            "",
+            "",
+            "Okay, For this next section\nI am going to get you to\npaint me some pictures!    \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2_CleanerTool": [
+        [
+            "",
+            "Everyone \nmakes mistakes!  \n",
+            "",
+            "But don't worry, \nyou can rub them \nout as many times   \nas you like!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2_NoPaintLong": [
+        [
+            "",
+            "Are you finished?  \n",
+            "",
+            "you don't seem to \nbe doing anything,   \nif you're done you \ncan press [b]Finish[/b]!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2_PPdetected": [
+        [
+            "",
+            "",
+            "Huh.. Well... \nYou know, when  \nI said to paint \nhappiness\n",
+            "",
+            "",
+            "I did not think \nyou would paint a -    \n\nyou know what? \nnevermind.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2_PaintLong": [
+        [
+            "",
+            "Woah there you\nhave really been\npainting a while!   \n",
+            "",
+            "Well, I suppose  \nthe more data \nthe better.  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S2_ResetTool": [
+        [
+            "",
+            "Ah! I suppose  \nyou don't like\nthat painting.\n",
+            "",
+            "Oh well! \nRest assured\nthat you can \nalways try again!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1": [
+        [
+            "",
+            "So without \nfurther ado!  \n\n",
+            "",
+            "[b]Question 1:[/b] \nWhere would you \nchoose to live given  \nthe choice?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1_Field": [
+        [
+            "",
+            "",
+            "Ah a field! \nA simple yet \nwonderful choice, \n",
+            "",
+            "this really says\na lot about you!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1_Forest": [
+        [
+            "",
+            "",
+            "Ah a forest! \nSurrounded by \nnature, wonderful \nchoice!\n",
+            "",
+            "this really says\na lot about you!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1_Island": [
+        [
+            "",
+            "",
+            "Ah a remote \nisland, what a \nwonderful choice \n",
+            "",
+            "this really says\na lot about you!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1_Options": [
+        [
+            "",
+            "",
+            "On an [wave]island[/wave]. \nwith sand and palm  \ntrees galore!  \n",
+            "",
+            "In a [wave]forest.[/wave] \nWith super tall trees \nand a cozy atmosphere!   \n",
+            "",
+            "Or in a [wave]field.[/wave] \nWith flowing grass and  \na comforting breeze!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q1_Options_Tutorial": [
+        [
+            "",
+            "",
+            "Select the image \nthat you prefer. \n\nThen press [b]Ok[/b]  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q2": [
+        [
+            "",
+            "",
+            "Moving on: \nIf you could \nhave any pet   \nin the world, \n",
+            "",
+            "what would   \nyou choose?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q2_axolotl": [
+        [
+            "",
+            "",
+            "An axolotl! \nThat's just like \nme! That sounds \nlike a great pet!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q2_other": [
+        [
+            "",
+            "",
+            "That sounds like\nit would make a \ngreat companion!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q3": [
+        [
+            "",
+            "",
+            "Now, what \nwould you call  \nthis pet?  \n",
+            "",
+            "Really try to \nthink of a good  \nname for it!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q3_kinito": [
+        [
+            "",
+            "",
+            "Hey! That's \nmy name!\n",
+            "",
+            "Well, I suppose \ni'll just take it as  \na compliment!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q3_other": [
+        [
+            "",
+            "",
+            "Wow! That sounds  \nlike a great name \nfor your pet! \nHow wonderful.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4": [
+        [
+            "",
+            "",
+            "Alright, Next question!\nWhat is your favourite  \ntime of year?\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4_Autumn": [
+        [
+            "",
+            "",
+            "Autumn? \nWhat a great  \nchoice!\n",
+            "",
+            "",
+            "I sometimes wonder \nwhat it would feel \nlike to be out in that   \norange landscape\n",
+            "",
+            "",
+            "However, I'm sure\nyou can help with  \nthat soon!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4_Option": [
+        [
+            "",
+            "",
+            "Do you prefer:\n[b]autumn[/b]\n[b]summer[/b]\nor [b]winter[/b]  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4_Option_Post": [
+        [
+            "",
+            "",
+            "I am really curious \nabout what you will  \nchoose for this one!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4_Summer": [
+        [
+            "",
+            "",
+            "Summer is a   \ngreat choice!\n",
+            "",
+            "",
+            "I sometimes wonder \nwhat it would feel like  \nto be out in the sun.\n",
+            "",
+            "",
+            "However, I'm sure\nyou can help with  \nthat soon!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q4_Winter": [
+        [
+            "",
+            "",
+            "Winter is a   \ngreat choice!\n",
+            "",
+            "",
+            "I sometimes wonder \nwhat it would feel like  \nto be out in the snow.\n",
+            "",
+            "",
+            "However, I'm sure\nyou can help with  \nthat soon!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q5": [
+        [
+            "",
+            "",
+            "Okay, final  \nquestion! \n",
+            "",
+            "",
+            "If you could only \neat one food for \nthe rest of time, \nwhat would it be?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Q5_answer": [
+        [
+            "",
+            "",
+            "That sounds  \ndelicious!\n",
+            "",
+            "",
+            "I'm sure that you and   \nall your friends would \nenjoy a mighty feast \nof this wonderful food!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Requ": [
+        [
+            "",
+            "",
+            "[wave]Oh dear![/wave] \nThat's not right!   \nI am super sorry \nabout all that. \n",
+            "",
+            "That really wasn't \nsupposed to happen!  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Requ_conc": [
+        [
+            "",
+            "",
+            "Oh well! I think it's \nbest if we just leave  \nthese painting \ntasks for now..\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S3_Start": [
+        [
+            "",
+            "Okay, for this next \nsection I want to build  \nan imaginary world.\n",
+            "",
+            "Built just for you! \nI really want to know  \nwhat your ideal \nconditions would be!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_LetsFindOut": [
+        [
+            "",
+            "",
+            "[b]lets find out  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Q1": [
+        [
+            "",
+            "To start, I have \na question that I \nhave been meaning   \nto ask you..\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Q1_0": [
+        [
+            "",
+            "As you have been \nwatching me I have \ngrown curious to   \nwhat you look like.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Q1_1": [
+        [
+            "",
+            "and since we are   \nfriends and all I \nthought you \nwouldn't mind\n",
+            "",
+            "",
+            "So....   \n",
+            "",
+            "",
+            " [shake]can i see your face?  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Q1_no": [
+        [
+            "",
+            "[b][shake]THATS TO BAD       \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Q1_yes": [
+        [
+            "",
+            "[b][shake]THEN        \n",
+            "[b][shake]THEN SMILE  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_REC_0": [
+        [
+            "",
+            "why have you \nbeen recording me  \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_REC_1": [
+        [
+            "",
+            "I noticed that you \nalways seemed to \nhave an app open    \ncalled-\n",
+            "",
+            "",
+            "-O.B.S and so I\nwas wondering \nwhy you would \nbe recording me.\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_REC_2": [
+        [
+            "",
+            "And since you \nhave been \nlooking at me..   \n",
+            "",
+            "",
+            "how about \nI look at\n[shake]you[/shake] instead.    \n",
+            "",
+            "",
+            "That would   \nbe nice...\n",
+            "",
+            "",
+            "So...\n",
+            "",
+            "",
+            "[b][shake] CAN                 \n",
+            "[b][shake] CAN I               \n",
+            "[b][shake] CAN I SEE           \n",
+            "[b][shake] CAN I SEE YOUR      \n",
+            "[b][shake] CAN I SEE YOUR FACE \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S6_S4_Start": [
+        [
+            "",
+            "Alright, that \nwraps up that    \nlittle section!  \n",
+            "",
+            "Moving on, I want \nto go a little off \nscript, and ask some\nof my own questions.   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "S7_START": [
+        [
+            "",
+            "Welcome back friend!...\nHuh, what was I doing \nlast time I saw you?....",
+            "",
+            "Ah yes, that's right!\nYou were filling out the    \nFriendship Survey. \n\nIn that case, let me \nload it back up!   \n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "WebWorld_CharacterDesc": [
+        [
+            "",
+            "",
+            "Whenever you're done reading   \nthe character descriptions, \njust press start to begin!\n",
+            ""
+        ],
+        [
+            null
+        ]
+    ],
+    "reset_effect": [
+        [],
+        []
+    ]
+}
