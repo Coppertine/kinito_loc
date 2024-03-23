@@ -4,6 +4,8 @@ var files_loaded = false
 
 var patched_pc = false
 var patched_desktop = false
+var patched_notes = false
+var patched_email = false
 var patched_dialogue = false
 var patched_funfair = false
 var patched_your_home = false
@@ -102,14 +104,10 @@ func _ready():
 	config_handler()
 	while !config_loaded: # _ready() has to wait up before the config is fully loaded
 		yield(get_tree().create_timer(0.1,false),"timeout")
-
 	for child_node in $CanvasLayer.get_children():
 		child_node.visible = config["SHOW_DEBUG_CONSOLES"] == "True"
-
 	current_lang = config["LANGUAGE"]
-	
-	files_loaded = load_translation_files(current_lang)
-	
+	files_loaded = load_translation_files(current_lang)	
 	
 func _show_node_paths():
 	var path = $CanvasLayer/LineEdit.text
@@ -157,7 +155,7 @@ func _patch_app000():
 			node_0.get_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s0-1/Bootscreen").bbcode_text = kinito_loc.kinito_common_text["COMMON_A_GAME_BY"]
 			print_log("Patched Boot credits")
 			patched_boot_credits = true
-		if node_0.has_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s0/Bootscreen"):
+		if !patched_boot_screen and node_0.has_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s0/Bootscreen"):
 			node_0.get_node("C/PC/Input/Viewport/NROOT/Aspect/Aspect/s0/Bootscreen").bbcode_text = kinito_loc.kinito_common_text["COMMON_BOOT_SCREEN"]
 			print_log("Patched Boot Screen")
 			patched_boot_screen = true
@@ -193,25 +191,25 @@ func _patch_app001():
 func _patch_app003():
 	if Tab.data["open"][3] == true:
 		var node_3 = get_parent().get_parent().get_node("3").get_child(0)
-			if node_3.has_node("Active/ASSET/1/NEST"): # window (content warning / readme)
-				# THE ONLY WAY TO KNOW IF THIS IS A WELCOME OR HOW TO APP
-				if get_parent().get_parent().get_node("3").get_child(0).has_node("Active/Title"):
-					node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_WELCOME"]
-				if node_3.has_node("Active/ASSET/1/Text"):
-					node_3.get_node("Active/ASSET/1/Text").bbcode_text = kinito_loc.kinito_common_text["WINDOW_CONTENTW"]
-				if node_3.has_node("Active/ASSET/1/Title"):
-					node_3.get_node("Active/ASSET/1/Title").text = kinito_loc.kinito_common_text["WINDOW_CONTENTW_HEADER"]
-				if node_3.has_node("Active/ASSET/1/NEST"): # window button
-					node_3.get_node("Active/ASSET/1/NEST").text = kinito_loc.kinito_common_text["COMMON_CONTINUE"]
-			elif node_3.has_node("Active/ASSET/1/Okayt"):
-				if node_3.has_node("Active/Title"):
-					node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_HOWTO"]
-				if node_3.has_node("Active/ASSET/1/TITLE"):
-					node_3.get_node("Active/ASSET/1/TITLE").text = kinito_loc.kinito_common_text["WINDOW_HOWTO_HEADER"]
-				if node_3.has_node("Active/ASSET/1/TEXT"):
-					node_3.get_node("Active/ASSET/1/TEXT").text = kinito_loc.kinito_common_text["WINDOW_HOWTO"]
-				if node_3.has_node("Active/ASSET/1/Okayt"):
-					node_3.get_node("Active/ASSET/1/Okayt").text = kinito_loc.kinito_common_text["COMMON_OK"]
+		if node_3.has_node("Active/ASSET/1/NEST"): # window (content warning / readme)
+			# THE ONLY WAY TO KNOW IF THIS IS A WELCOME OR HOW TO APP
+			if get_parent().get_parent().get_node("3").get_child(0).has_node("Active/Title"):
+				node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_WELCOME"]
+			if node_3.has_node("Active/ASSET/1/Text"):
+				node_3.get_node("Active/ASSET/1/Text").bbcode_text = kinito_loc.kinito_common_text["WINDOW_CONTENTW"]
+			if node_3.has_node("Active/ASSET/1/Title"):
+				node_3.get_node("Active/ASSET/1/Title").text = kinito_loc.kinito_common_text["WINDOW_CONTENTW_HEADER"]
+			if node_3.has_node("Active/ASSET/1/NEST"): # window button
+				node_3.get_node("Active/ASSET/1/NEST").text = kinito_loc.kinito_common_text["COMMON_CONTINUE"]
+		elif node_3.has_node("Active/ASSET/1/Okayt"):
+			if node_3.has_node("Active/Title"):
+				node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_HOWTO"]
+			if node_3.has_node("Active/ASSET/1/TITLE"):
+				node_3.get_node("Active/ASSET/1/TITLE").text = kinito_loc.kinito_common_text["WINDOW_HOWTO_HEADER"]
+			if node_3.has_node("Active/ASSET/1/TEXT"):
+				node_3.get_node("Active/ASSET/1/TEXT").text = kinito_loc.kinito_common_text["WINDOW_HOWTO"]
+			if node_3.has_node("Active/ASSET/1/Okayt"):
+				node_3.get_node("Active/ASSET/1/Okayt").text = kinito_loc.kinito_common_text["COMMON_OK"]
 
 func _patch_app007():
 	var patched_button = false
@@ -277,7 +275,7 @@ func _patch_app007():
 
 func _patch_app010():
 	#NROOT/_/Active/Label
-	if Tab.data["open"][10] and get_parent().get_parent().get_node("10").has_node("NROOT/_/Active/Label"):
+	if Tab.data["open"][10] and get_parent().get_parent().has_node("10/NROOT/_/Active/Label"):
 		var last_save = get_parent().get_parent().get_node("10/NROOT/_/Active/Label")
 		last_save.text = kinito_loc.kinito_common_text["COMMON_LSAVED"] % Data.data["lastSave"]
 
@@ -318,37 +316,55 @@ func _patch_your_home():
 		
 		# Book
 		var book_name = "House/House/Collision/[desc] Super "+Data.data["name"]+" and their ability to "+str(Vars.get("HOUSE_superpower"))
-		var loc_book_name = kinito_loc.kinito_common_text["YWRD_HOME_BOOK"].replace("[name]",Data.data["name"]).replace("[superpower]",str(Vars.get("HOUSE_superpower"))
+		var loc_book_name = kinito_loc.kinito_common_text["YWRD_HOME_BOOK"].replace("[name]",Data.data["name"]).replace("[superpower]",str(Vars.get("HOUSE_superpower")))
 		get_tree().current_scene().get_node(book_name).name = "[desc] " + loc_book_name
-		
 		# Pet house
 		var pet_name = "House/HOUSE/House_extras/pethouse/PetHouse_Plane/[desc] Looks like "+Vars.get("HOUSE_petname")+" the "+Vars.get("HOUSE_pettype")+" is out at the moment"
 		var loc_pet_name = kinito_loc.kinito_common_text["YWRD_HOME_PET"].replace("[petname]", Vars.get("HOUSE_petname")).replace("[pettype]",Vars.get("HOUSE_pettype"))
 		get_tree().current_scene().get_node(pet_name).name = "[desc] " + loc_pet_name
 		patched_your_home = true
 
-
+func _patch_notes():
+	Tab.objectives = kinito_loc.kinito_common_text["PC_NOTES"]
+	patched_notes = true
+	
+func _patch_email():
+	var exe_path = str(OS.get_executable_path().get_base_dir().replace("\\","/"))
+	var email_names = ["KPET", "NTL", "TTT", "ENTRY", "WAI", "BDOOR", "LWRLD", "GLUCK", "FSC"]
+	var emails = []
+	for email_name in email_names:
+		print_log("Patching email: "+email_name)
+		var message = kinito_loc.kinito_common_text["EMAIL_"+email_name+"_MESSAGE"]
+		if email_name == "TTT":
+			# Note to self, move this to somehere that the translate can.. place in..
+			message.replace("%s/extra/article.png", exe_path + "/extra/article.png")
+		emails.append([kinito_loc.kinito_common_text["EMAIL_"+email_name+"_TITLE"],kinito_loc.kinito_common_text["EMAIL_"+email_name+"_SENDER"],message])
+	Tab.email = emails
+	patched_email = true
+	pass
+	
 func _process(delta):
 	# Patch intro screen (PC)
 	_show_node_paths()
 	if files_loaded:
 		if Input.is_key_pressed(KEY_TAB):
 			print_log("Reloading translation files...")
-			files_loaded = load_translation_files("en")
+			files_loaded = load_translation_files(current_lang)
 		
 		_show_localized()
 		
 		if Data.data["lastSave"] == "never":
 			Data.data["lastSave"] = kinito_loc.kinito_common_text["COMMON_LSAVED_NEVER"]
-		
-		_patch_notes()
-		_patch_email()
+		if !patched_notes:
+			_patch_notes()
+		if !patched_email:
+			_patch_email()
 		_patch_app000()
 		_patch_app001()
 		_patch_app003()
 		_patch_app007()
 		_patch_app010()
-		if Data.data["sp"] == 12 and Vars.get("PC_Friend_KillAllFINISH") == true: 
+		if Data.data["sp"] == 12 and Vars.get("PC_Friend_KillAllFINISH") == true:
 			# there's a ton of stuff with these two that revolve around scene trees that i don't want to f over..
 			# So this should ONLY run once Kinito "kills" all of your Steam Friends (used inside the house)
 			# (Around this point, kinito will save said friends into a json file and some png files in '.steam')
