@@ -52,8 +52,8 @@
 	"WINDOW_CONTENTW_HEADER": "Welcome Back!",
 	"WINDOW_HOWTO_HEADER": "How to use!",
 	
-	"WINDOW_CONTENTW": "This game contains content that might not be suitable for everyone below is a manual the outlines more about the game:\n\n[url]https://kinitopet.com/readme[/url] or via [url=localdir2]local file[/url].\n\n- (NOTE: If you are broadcasting the game it is strongly recommended to read the manual)\n- [ In the settings there is a streamer mode ]\n- NOT SUITABLE FOR THOSE WITH PHOTOSENSITIVE EPILEPSY\n\nThank you.",
-	"WINDOW_HOWTO": "This game will save automatically throughout  the playthrough. You can view the last time the game was saved in the pause menu, and at settings menu. \nUse [SHIFT+SPACE] to skip the boot sequence.\n\nTo pause the game double tap the \"Pause Game\" application, then to close the game press \"Close Game\" from the menu.\n\nTo get started, double click an application to open it.\n\nPress 'Ok' to continue.",
+	"WINDOW_CONTENTW": "This game contains content that might not be suitable for everyone, below is a manual that outlines more about the game:\n\n[url]https://kinitopet.com/readme[/url] or via [url=localdir2]local file[/url].\n\n- (NOTE: If you are broadcasting the game it is strongly recommended to read the manual)\n- [ In the settings there is a streamer mode ]\n- NOT SUITABLE FOR THOSE WITH PHOTOSENSITIVE EPILEPSY\n\nThank you.",
+	"WINDOW_HOWTO": "This game will save automatically throughout the playthrough. You can view the last time the game was saved in the pause menu, and at settings menu. \nUse [SHIFT+SPACE] to skip the boot sequence.\n\nTo pause the game double tap the \"Pause Game\" application, then to close the game press \"Close Game\" from the menu.\n\nTo get started, double click an application to open it.\n\nPress 'Ok' to continue.",
 	
 	"PC_APPS_MYCOMPUTER": "My Computer",
 	"PC_APPS_SETTINGS": "Cog Icon",
@@ -176,15 +176,16 @@
 	"PC_INTERNET_TYPETO2": "type to search",
 	
 	"PC_INTERNET_S0_HEADER": "New Blog Post:\nMy thoughts on [Term]...",
+    // Double check with the actual display so that the text does not go under any of the images, you can remove and add \t and \n where ever sees fit
 	"PC_INTERNET_S0": "                                                  [b][Term][/b] has been a major topic in recent times due to its\n \t\t\t\t\t\t\t\t\t\t\t\t obvious impact on society as a whole!   \n \t\t\t\t\t\t\t\t\t\t\t     This piqued interest has resulted in centuries of science and \n \t\t\t\t\t\t\t\t\t\t\t\t invention to better understand [Term]. \n\t\t\t\t\t\t\t\t\t\t\t\t  That curiosity shall yeild no more! \n\t\t\t\t\t\t\t\t\t\t\t\t  As the answer to the [b][Term][/b] has finally been solved!\n\n\n\nThe recent in-depth study of [b][Term][/b] performed by \n{The Institution Of Global Sciences LTD Limmited INC}\n(TIOFSLLI) has determined that the long awaited solution\nis here! This news is so shocking that {The Non-Profit \nProfitable Research And Development Sector Of The\nUniversally Accepted Sciences} (TNPPRADSOTU) has \ndetermined that the news could be so shocking that most\njust seize up and assend to a greater plane of existence!\n\n \n                                                 With that being said! [b][Term]'s[/b] solution must first be solved! \n\t\t\t\t\t\t\t\t\t\t\t\t And it has been! And that is the fundementals behind why\n\t\t\t\t\t\t\t\t\t\t\t\t are universe operates! [b][Term][/b] is so strucularly important\n\t\t\t\t\t\t\t\t\t\t\t\t to are universe that the removal of it could break the very fabric of reality!\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\n\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream\nERROR 404: failed to load stream",
 	
 	"PC_INTERNET_S2_HEADER": "[i]Shop results for:[/i]\nOnline shoping results for [b][Term][/b].",
 	"PC_INTERNET_S2": "[i]The [Term] bag uses its unbearing style and irresistible looks are like no other.\nThe essense [Term] is perfectly enraptured in the unnaturally naturally sourced bamboo weaved bag that is sure to win over anyone at will.\n\n[Term] has been used to represent this bag as we feel its meaning is too deep to be represented in any other form.",
 	
-	"PC_INTERNET_S2_AD0": "[color=#000000]The [b][Term][/b] bag![i]\n[color=#555555][10.99€][/color]\n\n\n",
+	"PC_INTERNET_S2_AD0": "[color=#000000]The [b][Term][/b] bag![i]\n[color=#555555][10.99€][/color]\n\n\n", // use local currency if you want to.
 	"PC_INTERNET_S2_AD1": "[b][Term][/b] bag!\n[i][10.99€] -34% OFF!!![/i]\n",
 	
-	"PC_INTERNET_S3_HEADER": "[Term] is overratted.....\n340,560 views   rated  3.4/5\n",
+	"PC_INTERNET_S3_HEADER": "[Term] is overratted.....\n340,560 views   rated  3.4/5\n", // format numbers if need be
 	"PC_INTERNET_S3_DESC": "\nDescription:\n[i]Ill say it! [Term] is overated! ITS TRUE and I know some people can't handle this information!\n[fade]However....[/i]  \n",
 	
 	"PC_INTERNET_S3_COMMENTS": "\nComments:\n",
@@ -293,42 +294,46 @@
 	"KPET_BFAH_TITLE": "(KinitoPET.exe) - Best Friends Analysis Hub",
 	
 	"KPET_YWC_TITLE": "KinitoPET.exe - Compiling (Administrator)",
-	"KPET_YWC_TITLE_SEL": "Select KinitoPET.exe - Compiling (Administrator)",
+	"KPET_YWC_TITLE_SEL": "Select KinitoPET.exe - Compiling (Administrator)", // should be the same as selecing a piece of text in the command prompt
 	
-	"KPET_YWC_DWNFILE": "- %RANDOM%_File [!assets[%%i]! %RANDOM%] downloaded from server [\"kinito\"] %TIME%",
-	"KPET_YWC_MODFILE": "- %RANDOM%_Local file [!assets[%%i]! %RANDOM%] modified %TIME%",
-	"KPET_YWC_ASSETC": "- %RANDOM%_Assets [!assets[%%i]! %RANDOM%] created %TIME%",
+	"KPET_YWC_DWNFILE": "- %RANDOM%_File [!assets[%%i]! %RANDOM%] downloaded from server [\"kinito\"] %TIME%", // only translate "downloaded from server", if changing format of this line, ensure to change format of others
+	"KPET_YWC_MODFILE": "- %RANDOM%_Local file [!assets[%%i]! %RANDOM%] modified %TIME%", // same, but with "modified"
+	"KPET_YWC_ASSETC": "- %RANDOM%_Assets [!assets[%%i]! %RANDOM%] created %TIME%", // same with "created"
 	
 	"KPET_YWC_COMPILEC": "compile = COMPLETE",
 	"KPET_YWC_INIT": "initializing",
 	"KPET_YWC_YW": "your_world.exe was successfully compiled",
 	
-	"KPET_CMD_TITLE": "Command Prompt", // 
+	"KPET_CMD_TITLE": "Command Prompt", // use official translation from Windows 10 for your spesific language
 	
-	"KPET_CMD_HEADER1": "Operating System [Version 10.0.1999.2024]", // DO NOT TRANSLATE "Operating System" or "Operating Systems" UNLESS You have localised the name everywhere else.
-	"KPET_CMD_HEADER2": "(c) Operating Systems. All rights reserved.",
+    // DO NOT TRANSLATE "Operating System" or "Operating Systems" UNLESS You have localised the name everywhere else.
+	"KPET_CMD_HEADER1": "Operating System [Version 10.0.1999.2024]", // keep version to 10.0.1999.2000
+    "KPET_CMD_HEADER2": "(c) Operating Systems. All rights reserved.",
 	
-	"KPET_CMD_ECHO": "'echo' is recognized but I don't feel like running it.",
+	"KPET_CMD_ECHO": "'echo' is recognized but I don't feel like running it.", // I refering to the command prompt itself.
 	 
-    // if translate below, please make sure they reference the same "decrypted" files
-	"KPET_CMD_CONFIRM1": "Please enter valid credentials.",
-	"KPET_CMD_CONFIRM2": "Please enter the target server.",
-	"KPET_CMD_CONFIRM3": "Please enter password.",
-	"KPET_CMD_CONFIRM4": "Please enter the access code.",
-	"KPET_CMD_CONFIRM5": "Are you sure you want to do this? Please enter the confirmatory code to confirm.",
+    // if translating below, please make sure they reference the same "decrypted" file names:
+	"KPET_CMD_CONFIRM1": "Please enter valid credentials.", // credentials
+	"KPET_CMD_CONFIRM2": "Please enter the target server.", // server
+	"KPET_CMD_CONFIRM3": "Please enter password.", // password
+	"KPET_CMD_CONFIRM4": "Please enter the access code.", // access
+	"KPET_CMD_CONFIRM5": "Are you sure you want to do this? Please enter the confirmatory code to confirm.", // confirmatory
 	
 	"KPET_CMD_DENIED": "Access denied",
 	"KPET_CMD_GRANTED": "Access granted",
 	
-	"KPET_CMD_GRANTF": "what are you looking for",
-	"KPET_CMD_GOODBYE": "goodbye friend",
+	"KPET_CMD_GRANTF": "what are you looking for", // is placed inside a text file "grant.kinito_grant"
+	"KPET_CMD_GOODBYE": "goodbye friend", // is placed inside a text file "delete.123"
 	
 	"KPET_CMD_SEQBOOT": "[system access granted] sequence boot",
-	"KPET_CMD_GRNTPERMS": "granting permissions to kinitopet.exe",
+	"KPET_CMD_GRNTPERMS": "granting permissions to kinitopet.exe", // incidental : found in original code, removed for translators
 	
-	"KPET_CMD_RMFILE": "removing file [!assets[%%i]!] from server [\"kinito\"]",
-	"KPET_CMD_RMDB": "removing file [!names[%%i]!s_database.txt] from server [\"kinito\"]",
-	"KPET_CMD_RMWRLD": "removing file [!names[%%i]!s_world.zip] from server [\"kinito\"]",
+    // Placeholder here... if you want to localize 47 different names (or to do a list of 47 baby names in your country) (3 are reserved for "Sonny", "Troy" and the player name)
+    // Please tag coppertine...
+	
+    "KPET_CMD_RMFILE": "removing file [!assets[%%i]!] from server [\"kinito\"]", // do not translate anything within []
+	"KPET_CMD_RMDB": "removing file [!names[%%i]!s_database.txt] from server [\"kinito\"]", // do not translate anything within [] unless you are changing "names_database.txt"
+	"KPET_CMD_RMWRLD": "removing file [!names[%%i]!s_world.zip] from server [\"kinito\"]", // do not translate anything within [] unless you are changing "names_world.zip"
 	"KPET_CMD_RMCORE": "removing core files...",
 
 	"KPET_CMD_RMDONE": "The contents of the (\"kinito\") server were successfully removed.",
@@ -349,6 +354,7 @@
 	"YWRD_HOME_FRIDGE": "It is full of [favfood]", // [favfood] = players' favourate food
 	"YWRD_HOME_BOOK": "Super [name] and the ability to [superpower]",
 
+    // copper notes to self...
 	// if you can't replace a method call.. (House/Fountain/Anim) (titleChange())
 	// replace res://Act3/Home/Scenese/Feild/Feild.tscn
 	"YWRD_HOME_FOUNTAIN_1": "ITS TOO LATE FOR YOU",
