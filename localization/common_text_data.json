@@ -53,7 +53,7 @@
 	"WINDOW_HOWTO": "This game will save automatically throughout  the playthrough. You can view the last time the game was saved in the pause menu, and at settings menu. \nUse [SHIFT+SPACE] to skip the boot sequence.\n\nTo pause the game double tap the \"Pause Game\" application, then to close the game press \"Close Game\" from the menu.\n\nTo get started, double click an application to open it.\n\nPress 'Ok' to continue.",
 	
 	"PC_APPS_MYCOMPUTER": "My Computer",
-	"PC_APPS_SETTINGS": "Cog Icon",
+	"PC_APPS_SETTINGS": "Settings",
 	"PC_APPS_INTERNET": "The Internet",
 	"PC_APPS_PICTURES": "My Pictures",
 	"PC_APPS_MUSIC": "My Music",
