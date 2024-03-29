@@ -245,6 +245,8 @@ func _patch_app003():
 ######
 var patched_internet = {"loading":false,"home":false,"results":false,"page":false}
 var _sites_enum = ["HISTORY","WIKI","NEWVID","IMG","NEWS","STORE","BLOG"]
+var current_count = 0
+var time_range = 0
 func _patch_app005():
 	if Tab.data["open"][5] == true:
 		## Loading screen
@@ -260,26 +262,40 @@ func _patch_app005():
 				# We need to recreate the search results stats, although it's mostly cosmetic.. so randomise we do!!
 				# these are copies from the code, ish
 				print_log("Patching search results screen")
-	#			var searchCount = int(rand_range(12000,3000000))
-				var time_range =  rand_range(0.15,7.35)
-				var results_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS"].replacen("[count]",add_comma_to_int(get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control").currentCount))
-				results_text = results_text.replacen("[time]",str(time_range).left(3))
-				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results").bbcode_text = results_text
+				var searchCount = int(rand_range(12000,3000000))
+				time_range =  rand_range(0.15,7.35)
+				# Due to some socket shenanigans.. we need to recreate the Tween node.
+				var results_text_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results")
+				results_text_node.get_node("Tween").stop()
+				results_text_node.get_node("Tween").queue_free()
+				var results_text_ani : Tween = Tween.new()
+				results_text_ani.interpolate_property(self, "current_count", 0, searchCount, 3, Tween.TRANS_SINE, Tween.EASE_IN  )
+				results_text_ani.connect("tween_step", self, "_on_results_tween_step")
+				results_text_ani.name = "TextAni"
+				results_text_node.add_child(results_text_ani)
+				results_text_ani.start()
+#				var results_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS"].replacen("[count]",add_comma_to_int(current_count))
+#				results_text = results_text.replacen("[time]",str(time_range).left(3))
+#				results_text_node.bbcode_text = results_text
 				print_log("Results set to: " + get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results").bbcode_text)
 				# We have 8 of these buggers...
 				# Let's just hope we modifiy the non P values before it gets cloned over.
 				var results_list = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control")
-				print_log("Patching "+ str(_sites_enum.count()) + " Sites")
+				print_log("Patching "+ str(_sites_enum.size()) + " Sites")
 				
-				for site_i in range(_sites_enum.count()):
+				for site_i in range(_sites_enum.size()):
 					print_log("Patching Result #: " + str(site_i))
 					print_log("Patching Result: " + _sites_enum[site_i])
 					var site_num = site_i + 1
-					results_list.get_node(str(site_num) + "/Text").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_"+_sites_enum[site_i]+"_TITLE"].replacen("[term]",Vars.get("SearchTerm"))
-					results_list.get_node(str(site_num) + "/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_"+_sites_enum[site_i]+"_DESC"].replacen("[term]",Vars.get("SearchTerm"))
+					if !results_list.has_node(str(site_num)):
+						print_log("node: '" + str(site_num) + "' Not found..")
+					else:
+						print_log("node: '" + str(site_num) + "' Found..")
+						results_list.get_node(str(site_num) + "/_/Text").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_"+_sites_enum[site_i]+"_TITLE"].replacen("[term]",Vars.get("SearchTerm"))
+						results_list.get_node(str(site_num) + "/_/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_"+_sites_enum[site_i]+"_DESC"].replacen("[term]",Vars.get("SearchTerm"))
 				for error_num in range(8,13):
-					results_list.get_node("fake_" + str(error_num) + "/Node2D/Text").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_SUB"]
-					results_list.get_node("fake_" + str(error_num) + "/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_DESC"]
+					results_list.get_node("fake_" + str(error_num) + "/_/Node2D/Text").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_SUB"]
+					results_list.get_node("fake_" + str(error_num) + "/_/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_DESC"]
 				patched_internet["results"] = true
 			
 		## page
@@ -302,6 +318,16 @@ func _patch_app005():
 		patched_internet["home"] = false
 		patched_internet["results"] = false
 		patched_internet["page"] = false
+
+func _on_results_tween_step(object, key, elapsed, value):
+	var results_text_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results")
+	results_text_node.get_node("SFX").play()
+	results_text_node.get_node("SFX").pitch_scale += 0.001
+	results_text_node.get_node("SFX").volume_db -= 0.1
+	var results_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS"].replacen("[count]",add_comma_to_int(current_count))
+	results_text = results_text.replacen("[time]",str(time_range).left(3))
+	results_text_node.bbcode_text = results_text
+
 
 func patch_history():
 	pass
