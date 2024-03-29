@@ -222,6 +222,8 @@ func _patch_app003():
 		var node_3 = get_parent().get_parent().get_node("3").get_child(0)
 		if node_3.has_node("Active/ASSET/1/NEST"): # window (content warning / readme)
 			# THE ONLY WAY TO KNOW IF THIS IS A WELCOME OR HOW TO APP
+			
+			## NOTE, Font sizes are set correctly.. we need to chagne them if that happens :thinkinito:
 			if get_parent().get_parent().get_node("3").get_child(0).has_node("Active/Title"):
 				node_3.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_WELCOME"]
 			if node_3.has_node("Active/ASSET/1/Text"):
@@ -243,25 +245,31 @@ func _patch_app003():
 ######
 ## Internet
 ######
-var patched_internet = {"loading":false,"home":false,"results":false,"page":false}
+var patched_internet = {"loading":false,"home":false,"results":false,"page":false,"kpet_installer":false,"fclub_installer":false,"webworld":false}
 var _sites_enum = ["HISTORY","WIKI","NEWVID","IMG","NEWS","STORE","BLOG"]
 var current_count = 0
 var time_range = 0
 func _patch_app005():
 	if Tab.data["open"][5] == true:
-		## Loading screen
+		## Loading Screen
 		if !patched_internet["loading"] and get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Ayo"): # Only found on the launching internet part
 			print_log("Patching internet loading screen")
 			var oc : AnimationPlayer = get_parent().get_parent().get_node("5").get_node("Tab/OC")
 			patch_animation_track(oc.get_animation("0"), "Active/Active/ASSET/Download/Info:bbcode_text", kinito_loc.kinito_common_text["PC_INTERNET_CONNECTING"])
 			get_parent().get_parent().get_node("5").get_node("Tab/Active/RichTextLabel").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_WELCOME"]
 			patched_internet["loading"] = true
-		
+		## Home Screen, yes, long node path.. but what else should i check?
+		if !patched_internet["home"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ScrollContainer/HBoxContainer/Control/Password TextEdit2"):
+			get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control/Password TextEdit2").placeholder_text = kinito_loc.kinito_common_text["PC_INTERNET_TYPETO1"]
+			patched_internet["home"] = true
+		## Results Screen
 		if !patched_internet["results"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ScrollContainer/HBoxContainer/Control2/Control"):
 			if get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results/Tween").is_playing():
 				# We need to recreate the search results stats, although it's mostly cosmetic.. so randomise we do!!
 				# these are copies from the code, ish
 				print_log("Patching search results screen")
+				# placeholder text for search bar.. users should never see this...
+				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Password TextEdit2").placeholder_text = kinito_loc.kinito_common_text["PC_INTERNET_TYPETO2"]
 				var searchCount = int(rand_range(12000,3000000))
 				time_range =  rand_range(0.15,7.35)
 				# Due to some socket shenanigans.. we need to recreate the Tween node.
@@ -274,10 +282,7 @@ func _patch_app005():
 				results_text_ani.name = "TextAni"
 				results_text_node.add_child(results_text_ani)
 				results_text_ani.start()
-#				var results_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS"].replacen("[count]",add_comma_to_int(current_count))
-#				results_text = results_text.replacen("[time]",str(time_range).left(3))
-#				results_text_node.bbcode_text = results_text
-				print_log("Results set to: " + get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results").bbcode_text)
+				
 				# We have 8 of these buggers...
 				# Let's just hope we modifiy the non P values before it gets cloned over.
 				var results_list = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control")
@@ -297,27 +302,45 @@ func _patch_app005():
 					results_list.get_node("fake_" + str(error_num) + "/_/Node2D/Text").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_SUB"]
 					results_list.get_node("fake_" + str(error_num) + "/_/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_DESC"]
 				patched_internet["results"] = true
-			
 		## page
-#		if !patched_internet["page"]:
-#			var current_site = Vars.get("WebURL")
-#			match current_site[1]:
-#				sites["HISTORY"]:
-#					patch_history()
-#				sites["WIKI"]:
-#					patch_wiki()
-#				sites["NEWVID"]:
-#					patch_newvid()
-#			patched_internet["page"] = true
+		if !patched_internet["page"] and get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/Banner"):
+			var current_site = Vars.get("WebURL")
+			match current_site[1]:
+				sites["HISTORY"]:
+					patch_history()
+				sites["WIKI"]:
+					patch_wiki()
+				sites["NEWVID"]:
+					patch_newvid()
+				sites["IMG"]:
+					patch_img()
+				sites["NEWS"]:
+					patch_news()
+				sites["STORE"]:
+					patch_store()
+				sites["BLOG"]:
+					patch_blog()
+			patched_internet["page"] = true
+			
+		## KinitoPET Installer
 		
+		## KinitoPET Friendship Club Installer
+		
+		## Web World, it's a massive one, let's move that elsewhere..
+		if !patched_internet["webworld"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/PannelA"):
+			patch_web_world()
+			patched_internet["webworld"] = true
+			
 		if get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title"):
 			get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_INTERNET"]
-#			blog_post_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0"]
 	else:
 		patched_internet["loading"] = false
 		patched_internet["home"] = false
 		patched_internet["results"] = false
 		patched_internet["page"] = false
+		patched_internet["kpet_installer"] = false
+		patched_internet["fclub_installer"] = false
+		patched_internet["webworld"] = false
 
 func _on_results_tween_step(object, key, elapsed, value):
 	var results_text_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results")
@@ -335,6 +358,15 @@ func patch_history():
 func patch_wiki():
 	pass
 
+func patch_img():
+	pass
+
+func patch_news():
+	pass
+
+func path_store():
+	pass
+
 func patch_blog():
 	var current_tab = get_parent().get_parent().get_node("5").get_child(0)
 	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/B"):
@@ -345,6 +377,12 @@ func patch_blog():
 	if current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A"):
 		var blog_post_header = get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A")
 		blog_post_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0_HEADER"].replacen("[Term]", Vars.get("SearchTerm"))
+
+######
+## Web World
+######
+func patch_web_world():
+	pass
 
 ######
 ## Settings
