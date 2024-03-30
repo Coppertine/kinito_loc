@@ -245,7 +245,7 @@ func _patch_app003():
 ######
 ## Internet
 ######
-var patched_internet = {"loading":false,"home":false,"results":false,"page":false,"kpet_installer":false,"fclub_installer":false,"webworld":false}
+var patched_internet = {"loading":false,"home":false,"results":false,"page":false,"wizards":false,"kpet_installing":false,"fclub_installing":false,"webworld":false}
 var _sites_enum = ["HISTORY","WIKI","NEWVID","IMG","NEWS","STORE","BLOG"]
 var current_count = 0
 var time_range = 0
@@ -305,41 +305,59 @@ func _patch_app005():
 		## page
 		if !patched_internet["page"] and get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/Banner"):
 			var current_site = Vars.get("WebURL")
-			match current_site[1]:
-				sites["HISTORY"]:
-					patch_history()
-				sites["WIKI"]:
-					patch_wiki()
-				sites["NEWVID"]:
-					patch_newvid()
-				sites["IMG"]:
-					patch_img()
-				sites["NEWS"]:
-					patch_news()
-				sites["STORE"]:
-					patch_store()
-				sites["BLOG"]:
-					patch_blog()
+			if current_site[1] == "HISTORY":
+				patch_history()
+			if current_site[1] == "WIKI":
+				patch_wiki()
+			if current_site[1] == "NEWVID":
+				patch_newvid()
+			if current_site[1] == "IMG":
+				patch_img()
+			if current_site[1] == "NEWS":
+				patch_news()
+			if current_site[1] == "STORE":
+				patch_store()
+			if current_site[1] == "BLOG":
+				patch_blog()
 			patched_internet["page"] = true
 			
-		## KinitoPET Installer
-		
-		## KinitoPET Friendship Club Installer
-		
+		## KinitoPET Installers
+		if !patched_internet["wizards"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header"):
+			if Tab.objective == 2: # Install KinitoPET note
+				## KinitoPET Installation Wizard
+				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
+				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = kinito_loc.common_text["WINDOW_KPETWIZARD_TEXT"]
+				patched_internet["wizards"] = true
+			if Vars.get("Membership_Install") == "1":
+				## KinitoPET Friendship Club Instalation Wizard
+				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
+				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = 
+				patched_internet["wizards"] = true
+
+		# Post instalations
+		if !patched_internet["setups"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header")
+			if get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/NEST").text == "Finish >":
+				if Tab.objective == 2:
+					get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
+					## Post installation wizard.. firstly.. the size of said header is too small.
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").rect_size = Vector2(299,23)
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = 
+				if 
 		## Web World, it's a massive one, let's move that elsewhere..
 		if !patched_internet["webworld"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/PannelA"):
 			patch_web_world()
 			patched_internet["webworld"] = true
-			
+	
 		if get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title"):
-			get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_INTERNET"]
+			var title_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title")
+			if title_node.text != kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"] and title_node.text != kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
+				title_node.text = kinito_loc.kinito_common_text["WINDOW_TITLE_INTERNET"]
 	else:
 		patched_internet["loading"] = false
 		patched_internet["home"] = false
 		patched_internet["results"] = false
 		patched_internet["page"] = false
-		patched_internet["kpet_installer"] = false
-		patched_internet["fclub_installer"] = false
+		patched_internet["wizards"] = false
 		patched_internet["webworld"] = false
 
 func _on_results_tween_step(object, key, elapsed, value):
