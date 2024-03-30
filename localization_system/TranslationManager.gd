@@ -325,13 +325,13 @@ func _patch_app005():
 		if !patched_internet["wizards"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header"):
 			if Tab.objective == 2: # Install KinitoPET note
 				## KinitoPET Installation Wizard
-				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
+				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
 				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = kinito_loc.common_text["WINDOW_KPETWIZARD_TEXT"]
 				patched_internet["wizards"] = true
 			if Vars.get("Membership_Install") == "1":
 				## KinitoPET Friendship Club Instalation Wizard
-				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
-				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = 
+				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
+				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = kinito_loc.common_text["WINDOW_FCLUBWIZARD_TEXT"]
 				patched_internet["wizards"] = true
 
 		# Post instalations
