@@ -280,6 +280,33 @@
 	"STORY_PAGE1_1": "[center]But who was it from and who was it for?",
 	
 	"KPET_BFAH_TITLE": "(KinitoPET.exe) - Best Friends Analysis Hub",
+
+	"WINDOW_FCLUB_TITLE": "KinitoPET Friendship Club Membership",
+	"WINDOW_FCLUBWIZARD_TEXT": "This add-on will make changes to the following package: kinitopet.exe (KinitoPET Virtual Assistant)\n\nBy pressing 'Next' you are agreeing to the terms outlined by The Kinito Leisure and Entertainment Company. And the prompted installation to be carried out on your device. Relevant system files will download, please do not turn off your computer as this could cause unwanted corruption of files.\n\n\n\n\nClick Next to continue.",
+	
+	"FORM_FCLUB_DESC": "Please enter your registration information below. This will enable you to\nadd the extension to kinitopet.exe",
+	"FORM_FCLUB_HEADER": "Membership Registered To:",
+	"FORM_FCLUB_FNAME": "First Name:",
+	"FORM_FCLUB_LNAME": "Last Name:",
+	"FORM_FCLUB_EMAIL": "Email:",
+	"FORM_FCLUB_BDAY": "Day:",
+	"FORM_FCLUB_BMONTH": "Month:",
+	"FORM_FCLUB_BYEAR": "Year:",
+	"FORM_FCLUB_ADD1": "Address 1:",
+	"FORM_FCLUB_ADD2": "Address 2:",
+	"FORM_FCLUB_ZIP": "Zip/Postal:",
+	"FORM_FCLUB_COUNTRY": "Country:",
+	"FORM_FCLUB_DISCLAIMER": "only put in your email if you agree to\nbe sent a one-time email\n(this requires Elastic Email to store your email)",
+
+	"WINDOW_FCLUB_REGISTER": "Form Registration",
+	"PC_FCLUB_REGISTER":[
+		"[wave]Packing data to send...",
+		"COMPLETE",
+		"[wave]Establishing Connection to KinitoPET server...",
+		"COMPLETE",
+		"[wave]Sending data to KinitoPET server..."
+	],
+	"FCLUB_REGISTERED":"[center][wave][b]Congratulations[/b][/wave]\n\nYou are now a member",
 	
 	"KPET_YWC_TITLE": "KinitoPET.exe - Compiling (Administrator)",
 	
