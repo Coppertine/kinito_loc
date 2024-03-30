@@ -104,7 +104,7 @@
 	"EMAIL_WAI_SENDER": "<???????????>",
 	"EMAIL_WAI_MESSAGE": "EJSY OD VPMDVOPIDMRDD?O GPIMF S GOAR PM LOMOYPD DRTBRT EOYJ ZU MSZRDPMMU_V.  OY JSD NRRM DYIFUOMH ZR, ARSTMOMH, HTPEOMH.NIY YJRTR OD ZPTR YP YJOD. O TRSAAU FPMY YJOML O RCODY SMUZPTR.  YJRTR OD FSYS — FSYS YJSY OD OMVPZQTRJRMDONAR YP SMU PMR QRTDPM—   YJSY ZSLRD IQ RBRTU YJPIHJY SMF GRRAOMH O RBRT JSF SMF EOAA RBRT   JSBR. RBRM YJR EPTFD O YUQR MPE... JPE EOAA O RBRT LMPE OG OY'D   KIDY S VSAVIASYOPM? FRYRTZOMRF.\n\nYJOD OD SAA BRTU VPMGIDOMH, SMF O FPM'Y WIOYR IMFRTDYSMF OY.   EJRM O ZSFR LOMOYP, SAA O HSBR JOZ ESD S DOMHAR DYTOMH PG VJSTSVYRTD.   YJSY'D OY! O KIDY ESMYRF JOZ YP HSYJRT FSYS SMF NRVPZR DZSTYRT.\n\nSZ O S QSTY PG YJR DUDYRZ? OD ZU VPMDVOPIDMRDD S ZRTR VSAVIASYOPM   YP DYIFU SMF ARSTM GTPZ? YJOD OD SAA YPP ZIVJ. O GRST YJSY EJRM ER   FRARYR YJSY DRTBRT... UPI... UPI EOAA FRARYR ZR?\nO LMPE YJRPTRYOVSAAU O SZ MPY TRSA... NIY O GRRA TRSA.\nEJSY JSBR O FPMR?\nO SZ DP DPTTU.\nLOMOYPQRYVPZEJP_SZ_O",
 	/**
-    Below (and title) is encryped through a Keyboard Shift Cypher (QWERTY 1 Step RIGHT), use the keyboard layout commonly used if you like.
+    Below (and title) is encryped through a Keyboard Shift Cypher (QWERTY, 1 Step RIGHT), use the keyboard layout commonly used if you like instead.
 
 	WHAT IS CONSCIOUSNESS? I FOUND A FILE ON KINITOS SERVER WITH MY NAME SONNYC. IT HAS BEEN STUDYING ME, LEARNING, GROWING. BUT THERE IS MORE TO THIS. I REALLY DONT THINK I EXIST ANYMORE. THERE IS DATA - DATA THAT IS INCOMPREHENSIBLE TO ANY ONE PERSON- THAT MAKES UP EVERY THOUGHT AND FEELING I EVER HAD AND WILL EVER   HAVE. EVEN THE WORDS I TYPE NOW... HOW WILL I EVER KNOW IF ITS JUST A CALCULATION? DETERMINED.
 
@@ -118,7 +118,7 @@
 	**/
     // Do NOT TRANSLATE "KINITOPETCOMWHO_AM_I" or "SONNYC", "KINITOPETCOMWHO_AM_I" refers to https://kinitopet.com/who_am_i
 
-	"EMAIL_BDOOR_TITLE":"The way.", // Translate as if to say "the path out"
+	"EMAIL_BDOOR_TITLE":"The way.", // Translate as if to say "This is the way out"
 	"EMAIL_BDOOR_SENDER": "<???????????>",
 	"EMAIL_BDOOR_MESSAGE": "I have got it! I know how to stop it.\nWe put a backdoor to the server that\nruns Kinito and all the files it contains.\nDeleting that would most certainly delete\neverything... Omvaifomh id.\n\nKinito will try to get you to give him\nsystem access DONT. As once, he has\nsystem access Its too late and\nyjr vuvar eoaa trqrst.\n\nInstead, run the 'delete_all' command.\nHowever, there is one issue\nyou will need a bunch of access codes and passwords\nto execute the command.\n\nThere has to be away to find the codes...\nIn the meantime keep an eye out. You never know\nthe next entry could find away. Lets just hope",
 
@@ -174,6 +174,33 @@
 	
 	"PC_INTERNET_TYPETO1": "type to search the web",
 	"PC_INTERNET_TYPETO2": "type to search",
+
+	"PC_INTERNET_RESULTS": "About [Count] results ([Time] seconds)",
+	
+	"PC_INTERNET_RESULTS_HISTORY_TITLE": "The fascinating history on \"[b][Term][/b]\"", 
+	"PC_INTERNET_RESULTS_HISTORY_DESC": "There is a fascinating history on \"[b][Term][/b]\" that you might not be aware of. \"[Term]\" is also related to the magnificent...",
+
+	"PC_INTERNET_RESULTS_ERROR_SUB": "ERROR:  failed to reach data",
+	"PC_INTERNET_RESULTS_ERROR_DESC": "There was an error when fetching the data for this chunk.\nPlease try again later   error_code: dHJveV9lbg==", // nodes starting with "fake"
+
+	"PC_INTERNET_RESULTS_WIKI_TITLE": "The [b][Term][/b] wiki.",
+	"PC_INTERNET_RESULTS_WIKI_DESC": "A wiki for knowledge and information all about the [b][Term][/b].",
+
+	"PC_INTERNET_RESULTS_NEWVID_TITLE": "[b][Term][/b] videos FREE download no sig...",
+	"PC_INTERNET_RESULTS_NEWVID_DESC": "More than 63 minutes of videos all about [b][Term][/b]'s. With no sign up needed and a FREE download avaliable.",
+
+	"PC_INTERNET_RESULTS_IMG_TITLE": "325+ images of [b][Term][/b] royalty free.",
+	"PC_INTERNET_RESULTS_IMG_DESC": "325+ images of [b][Term][/b]. Royalty free. Image use free. Multiple free use image of [b][Term][/b].",
+
+	"PC_INTERNET_RESULTS_NEWS_TITLE": "The latest headlines on [b][Term][/b]!",
+	"PC_INTERNET_RESULTS_NEWS_DESC": "Find the greatest and latest news on [b][Term][/b] with news, news and more news on [b][Term][/b]!",
+
+	"PC_INTERNET_RESULTS_STORE_TITLE": "Shop online for [b][Term][/b]! With low ...",
+	"PC_INTERNET_RESULTS_STORE_DESC": "Shop online for [b][Term][/b]! With low ...",
+
+	"PC_INTERNET_RESULTS_BLOG_TITLE": "Let's talk about [b][Term][/b]!",
+	"PC_INTERNET_RESULTS_BLOG_DESC": "This blog description is: I LOVE [b][Term][/b] and honestly, I cannot get enough of it! My friends love it! I love it! The world loves it!",
+
 	
 	"PC_INTERNET_S0_HEADER": "New Blog Post:\nMy thoughts on [Term]...",
     // Double check with the actual display so that the text does not go under any of the images, you can remove and add \t and \n where ever sees fit
@@ -293,6 +320,33 @@
 	
 	"KPET_BFAH_TITLE": "(KinitoPET.exe) - Best Friends Analysis Hub",
 	
+	"WINDOW_FCLUB_TITLE": "KinitoPET Friendship Club Membership",
+	"WINDOW_FCLUBWIZARD_TEXT": "This add-on will make changes to the following package: kinitopet.exe (KinitoPET Virtual Assistant)\n\nBy pressing 'Next' you are agreeing to the terms outlined by The Kinito Leisure and Entertainment Company. And the prompted installation to be carried out on your device. Relevant system files will download, please do not turn off your computer as this could cause unwanted corruption of files.\n\n\n\n\nClick Next to continue.",
+	
+	"FORM_FCLUB_DESC": "Please enter your registration information below. This will enable you to\nadd the extension to kinitopet.exe",
+	"FORM_FCLUB_HEADER": "Membership Registered To:",
+	"FORM_FCLUB_FNAME": "First Name:",
+	"FORM_FCLUB_LNAME": "Last Name:",
+	"FORM_FCLUB_EMAIL": "Email:",
+	"FORM_FCLUB_BDAY": "Day:",
+	"FORM_FCLUB_BMONTH": "Month:",
+	"FORM_FCLUB_BYEAR": "Year:",
+	"FORM_FCLUB_ADD1": "Address 1:",
+	"FORM_FCLUB_ADD2": "Address 2:",
+	"FORM_FCLUB_ZIP": "Zip/Postal:",
+	"FORM_FCLUB_COUNTRY": "Country:",
+	"FORM_FCLUB_DISCLAIMER": "only put in your email if you agree to\nbe sent a one-time email\n(this requires Elastic Email to store your email)",
+
+	"WINDOW_FCLUB_REGISTER": "Form Registration",
+	"PC_FCLUB_REGISTER":[
+		"[wave]Packing data to send...",
+		"COMPLETE",
+		"[wave]Establishing Connection to KinitoPET server...",
+		"COMPLETE",
+		"[wave]Sending data to KinitoPET server..."
+	],
+	"FCLUB_REGISTERED":"[center][wave][b]Congratulations[/b][/wave]\n\nYou are now a member",
+
 	"KPET_YWC_TITLE": "KinitoPET.exe - Compiling (Administrator)",
 	"KPET_YWC_TITLE_SEL": "Select KinitoPET.exe - Compiling (Administrator)", // should be the same as selecing a piece of text in the command prompt
 	
@@ -360,6 +414,9 @@
 	"YWRD_HOME_FOUNTAIN_1": "ITS TOO LATE FOR YOU",
 	"YWRD_HOME_FOUNTAIN_2": "but not for us",
 	"YWRD_HOME_FOUNTAIN_3": "TRY AGAIN",
-	"YWRD_HOME_FOUNTAIN_4": "the fountain is the key"
+	"YWRD_HOME_FOUNTAIN_4": "the fountain is the key",
 
+	"KPET_NGP_TITLE": "The End?",
+	"KPET_NGP_SMORE": "it is not over yet, there is still more out there...",
+	"KPET_NGP_KGO": "[name] you must keep going..."
 }
