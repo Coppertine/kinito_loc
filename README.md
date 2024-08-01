@@ -4,6 +4,11 @@ Kinito Localisation System
 Currently on **HOLD** until a Proof of Concept mod is made to aid in "MODIFYING" the `your_world` / `-Scenes/NewInstance/1` scene (Secondary Montior Scare changes are allowed.)
 Right now, a AUD$20 Bounty is on the line for this proof of concept mod.
 
+Current Bounty Progress:
+----
+A method has been found and has been published. However is in a massively WIP state and installation is more-so weird compared to API like mods (ModConfig and !KinitoAPI) and can not replicate the project on my end for this project.
+https://github.com/reckdave/MultiInstance
+
 Bounty Rules:
 ----
 - Modification of (or requesting the player to modify) the `.pck` file is **NOT ALLOWED** and would be considered pirating if providing with one to the player.
