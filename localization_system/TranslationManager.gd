@@ -335,7 +335,7 @@ func _patch_app005():
 				patched_internet["wizards"] = true
 
 		# Post instalations
-		if !patched_internet["setups"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header")
+		if !patched_internet["setups"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header"):
 			if get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/NEST").text == "Finish >":
 				if Tab.objective == 2:
 					get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
