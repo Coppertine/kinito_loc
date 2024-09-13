@@ -80,8 +80,9 @@ public class LoopCMD : Node
 	}
 
 	private void _on_Funny_timeout()
-{	
-		IntPtr hwnd = FindWindow(null, "KinitoPET.exe - Compiling (Administrator)");
+	{
+		var vars = GetNode("/root/Vars");
+		IntPtr hwnd = FindWindow(null, (string)vars.Call("get","CMD_title"));
 		if (hwnd != IntPtr.Zero)
 		{
 			if (GetWindowRect(hwnd, out var rect))
@@ -90,7 +91,7 @@ public class LoopCMD : Node
 			}
 			return;
 		}
-		IntPtr hwnd2 = FindWindow(null, "Select KinitoPET.exe - Compiling (Administrator)");
+		IntPtr hwnd2 = FindWindow(null, (string)vars.Call("get","CMD_title_select"));
 		if (hwnd2 != IntPtr.Zero && GetWindowRect(hwnd2, out var rect2))
 		{
 			SetWindowPos(hwnd2, IntPtr.Zero, rect2.Left, rect2.Top, wid, hig, 8u);

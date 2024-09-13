@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://-Asset/Act2/CMD_input_box/CmdTerminal.cs" type="Script" id=1]
+[ext_resource path="res://-Asset/Act2/CMD_input_box/buildup.wav" type="AudioStream" id=2]
+[ext_resource path="res://-Asset/Act2/CMD_input_box/post.wav" type="AudioStream" id=3]
+[ext_resource path="res://-Asset/App000/genericcinematic.wav" type="AudioStream" id=4]
+[ext_resource path="res://-Asset/App000/beep.wav" type="AudioStream" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -8,7 +12,10 @@ script/source = "extends Control
 export var shakeval = 0.0
 
 export var run = false
-var current_lang = \"en\"
+# we are within 1/Main/Pet/CMD_Prompt
+
+#var current_lang = get_node(\"../../../../Mods/localization_system\").config[\"LANGUAGE\"]
+var current_lang = \"\"
 var kinitoBat = \"\"
 var KinitoLocalizedText = preload(\"res://localization_system/AllLocalizedData.gd\")
 var kinito_loc = KinitoLocalizedText.new()
@@ -130,18 +137,22 @@ func list_files_in_directory(path):
 	return files
 
 var onetime = false
-
+var loc_mod
 func _run():
 	if onetime== false:
-		print(\"Starting cmdinput\")
+		print(\"[localization] Starting cmdinput\")
 		onetime = true
+#		for i in get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node(\"Mods/LocalizationSystem\").get_children():
+#			print(\"[localization] node: \" + i.name)
+		loc_mod = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node(\"Mods/LocalizationSystem\")
+		current_lang = loc_mod.config[\"LANGUAGE\"]
 		import_lang(current_lang)
 		$FileCheck.start()
 		#OS.window_minimized = true
 		save_score()
 
 func import_lang(lang):
-	print(\"loading translation files for %s\" % lang)
+	print(\"[localization] loading translation files for %s\" % lang)
 	var cmn_path = \"user://localization/%s/common_text_data.json\" % lang
 	var file : File = File.new()
 	if file.file_exists(cmn_path) == true:
@@ -151,7 +162,7 @@ func import_lang(lang):
 		kinito_loc.kinito_common_text = error.result
 		file.close()
 	else:
-		print(\"common lines doesn't exist for %s.. ignoring\" % lang)
+		print(\"[localization] common lines doesn't exist for %s.. ignoring\" % lang)
 		return false
 	return true
 
@@ -176,6 +187,8 @@ func save_score():
 		file.store_string(kinitoBat)
 		file.close()
 	yield(get_tree().create_timer(1.0), \"timeout\")
+	# important for C# to know what the cmd is called..
+	Vars.set(\"CMD_title\", kinito_loc.kinito_common_text[\"KPET_CMD_TITLE\"])
 	$BAT._start()
 
 #access_given
@@ -407,14 +420,18 @@ script = ExtResource( 1 )
 anims/Go = SubResource( 2 )
 
 [node name="boom" type="AudioStreamPlayer" parent="Grant"]
+stream = ExtResource( 4 )
 volume_db = -10.0
 pitch_scale = 0.72
 
 [node name="done" type="AudioStreamPlayer" parent="Grant/boom"]
+stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="buildup" type="AudioStreamPlayer" parent="Grant"]
+stream = ExtResource( 2 )
 
 [node name="post" type="AudioStreamPlayer" parent="Grant"]
+stream = ExtResource( 3 )
 
 [connection signal="timeout" from="FileCheck" to="." method="_on_FileCheck_timeout"]

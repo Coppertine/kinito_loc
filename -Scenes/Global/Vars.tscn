@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+var global = {}
+
+func set(variable,value):
+	global[variable] = value
+
+func get(variable):
+	if(global.has(variable) == false):
+		global[variable] = null
+	return global[variable]
+"
+
+[node name="Vars" type="Node"]
+process_priority = 47
+script = SubResource( 1 )

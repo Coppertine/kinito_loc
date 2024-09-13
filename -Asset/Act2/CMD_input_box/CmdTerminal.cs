@@ -176,8 +176,9 @@ public class CmdTerminal : Node
 		{
 			return;
 		}
-		// thanks to lang stuff, this will be the german title instead..	
-		IntPtr hwnd = FindWindow(null, "Command Prompt");
+
+		var vars = GetNode("/root/Vars");
+		IntPtr hwnd = FindWindow(null, (string)vars.Call("get","CMD_title"));
 		if (hwnd != IntPtr.Zero && GetWindowRect(hwnd, out var rect))
 		{
 			if (randomValueX == 0)
@@ -214,7 +215,8 @@ public class CmdTerminal : Node
 
 	private void windowsPos()
 	{
-		IntPtr hwnd = FindWindow(null, "Command Prompt");
+		var vars = GetNode("/root/Vars");
+		IntPtr hwnd = FindWindow(null, (string)vars.Call("get","CMD_title"));
 		if (hwnd != IntPtr.Zero && GetWindowRect(hwnd, out var rect))
 		{
 			GD.Print("Window Position Updated: " + rect.Left + ", " + rect.Top);

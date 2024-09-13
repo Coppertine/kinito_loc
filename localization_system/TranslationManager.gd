@@ -15,7 +15,6 @@ var default_config = {
 	"SHOW_DEBUG_CONSOLES": false
 }
 var config = {}
-var current_lang = ""
 var config_loaded = false
 var config_node
 var current_scene
@@ -38,8 +37,7 @@ func config_handler():
 		while config_loaded == false:
 			if get_parent().has_node("Config_Scene"):
 				config_node = get_parent().get_node("Config_Scene")
-				var config_file = config_node.MakeConfig("localization",default_config)
-				config = config_node.values
+				config = config_node.MakeConfig("localization_system","Hatoving and Coppertine",default_config).ConfigValues
 				config_loaded = true
 			yield(get_tree().create_timer(0.1,false),"timeout")
 	else:
@@ -51,6 +49,7 @@ func load_translation_files(lang):
 	print_log("loading translation files for %s" % lang)
 	var dio_path = "user://localization/%s/dialogue_data.json" % lang
 	var cmn_path = "user://localization/%s/common_text_data.json" % lang
+	var questions_path = "user://localization/%s/question_data.json" % lang
 	
 	var file : File = File.new()
 	
@@ -78,10 +77,12 @@ func load_translation_files(lang):
 		file.close()
 	else:
 		print_log("common lines doesn't exist for %s.. ignoring" % lang)
-				
+	
+	### TODO: Add one extra for question data
 	patched_dialogue = false
 	patched_pc = false
 	patched_desktop = false
+	patched_internet = {"loading":false,"home":false,"results":false,"page":false,"wizards":false,"kpet_installing":false,"fclub_installing":false,"webworld":false}
 	
 	return true
 	
@@ -118,12 +119,7 @@ func get_animation_track(animation, track):
 func _ready():
 	config = default_config
 	config_handler()
-	while !config_loaded: # _ready() has to wait up before the config is fully loaded
-		yield(get_tree().create_timer(0.1,false),"timeout")
-	for child_node in $CanvasLayer.get_children():
-		child_node.visible = config["SHOW_DEBUG_CONSOLES"] == "True"
-	current_lang = config["LANGUAGE"]
-	files_loaded = load_translation_files(str(current_lang))
+	print_log("Localization System installed")
 	
 func _show_node_paths():
 	var path = $CanvasLayer/LineEdit.text
@@ -252,7 +248,7 @@ var time_range = 0
 func _patch_app005():
 	if Tab.data["open"][5] == true:
 		## Loading Screen
-		if !patched_internet["loading"] and get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Ayo"): # Only found on the launching internet part
+		if !patched_internet["loading"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Ayo"): # Only found on the launching internet part
 			print_log("Patching internet loading screen")
 			var oc : AnimationPlayer = get_parent().get_parent().get_node("5").get_node("Tab/OC")
 			patch_animation_track(oc.get_animation("0"), "Active/Active/ASSET/Download/Info:bbcode_text", kinito_loc.kinito_common_text["PC_INTERNET_CONNECTING"])
@@ -303,46 +299,58 @@ func _patch_app005():
 					results_list.get_node("fake_" + str(error_num) + "/_/Sub").bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_RESULTS_ERROR_DESC"]
 				patched_internet["results"] = true
 		## page
-		if !patched_internet["page"] and get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/Banner"):
+		if !patched_internet["page"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/Banner"):
+			print_mod("Getting Web URL")
 			var current_site = Vars.get("WebURL")
-			if current_site[1] == "HISTORY":
-				patch_history()
-			if current_site[1] == "WIKI":
-				patch_wiki()
-			if current_site[1] == "NEWVID":
-				patch_newvid()
-			if current_site[1] == "IMG":
-				patch_img()
-			if current_site[1] == "NEWS":
-				patch_news()
-			if current_site[1] == "STORE":
-				patch_store()
-			if current_site[1] == "BLOG":
-				patch_blog()
+			print_mod("Patching internet page.")
+			print_mod("Using page: " + current_site)
+#			if current_site[1] == "HISTORY":
+#				patch_history()
+#			if current_site[1] == "WIKI":
+#				patch_wiki()
+#			if current_site[1] == "NEWVID":
+#				patch_newvid()
+#			if current_site[1] == "IMG":
+#				patch_img()
+#			if current_site[1] == "NEWS":
+#				patch_news()
+#			if current_site[1] == "STORE":
+#				patch_store()
+#			if current_site[1] == "BLOG":
+#				patch_blog()
 			patched_internet["page"] = true
 			
 		## KinitoPET Installers
-		if !patched_internet["wizards"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header"):
+		if !patched_internet["wizards"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/NEST"):
+			var wizard_node = get_parent().get_parent().get_node("5").get_child(0)
 			if Tab.objective == 2: # Install KinitoPET note
 				## KinitoPET Installation Wizard
-				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
-				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = kinito_loc.common_text["WINDOW_KPETWIZARD_TEXT"]
+				print_log("Patching Installation Wizard pg 1")
+				wizard_node.get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_KPETWIZARD"]
+				wizard_node.get_node("Active/ASSET/1/Header").text = kinito_loc.kinito_common_text["WINDOW_KPETWIZARD_HEADER"]
+				wizard_node.get_node("Active/ASSET/1/T6").text = kinito_loc.kinito_common_text["WINDOW_KPETWIZARD_TEXT"]
 				patched_internet["wizards"] = true
 			if Vars.get("Membership_Install") == "1":
+				print_log("Patching Addon Installation Wizard pg 1")
 				## KinitoPET Friendship Club Instalation Wizard
-				get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
-				get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = kinito_loc.common_text["WINDOW_FCLUBWIZARD_TEXT"]
+				wizard_node.has_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_FCLUB_TITLE"]
+				wizard_node.get_node("Active/ASSET/1/Header").text = kinito_loc.kinito_common_text["WINDOW_KPETWIZARD_HEADER"]
+				wizard_node.get_node("Active/ASSET/1/T6").text = kinito_loc.kinito_common_text["WINDOW_FCLUBWIZARD_TEXT"]
 				patched_internet["wizards"] = true
 
 		# Post instalations
-		if !patched_internet["setups"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/Header"):
+		if !patched_internet["setups"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/ASSET/1/NEST"):
 			if get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/NEST").text == "Finish >":
 				if Tab.objective == 2:
-					get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title").text = kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"]
+					print_log("Patching Installation Wizard pg 3")
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_TITLE_KPETWIZARD"]
 					## Post installation wizard.. firstly.. the size of said header is too small.
-					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").rect_size = Vector2(299,23)
-					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/HEADER").bbcode_text = 
-				if 
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/Header").rect_size = Vector2(299,23)
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/T6").text = kinito_loc.kinito_common_text["WINDOW_KPETWIZARD_TEXTFINISH"]
+				if Vars.get("Membership_Install") == "2":
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title").text = kinito_loc.kinito_common_text["WINDOW_FCLUB_TITLE"]
+					get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ASSET/1/Header").text = kinito_loc.kinito_common_text["WINDOW_FCLUBWIZARD_FINISH"]
+				patched_internet["setups"] = true
 		## Web World, it's a massive one, let's move that elsewhere..
 		if !patched_internet["webworld"] and get_parent().get_parent().get_node("5").get_child(0).has_node("Active/PannelA"):
 			patch_web_world()
@@ -350,15 +358,10 @@ func _patch_app005():
 	
 		if get_parent().get_parent().get_node("5").get_child(0).has_node("Active/Title"):
 			var title_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/Title")
-			if title_node.text != kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"] and title_node.text != kinito_loc.common_text["WINDOW_FCLUB_TITLE"]
+			if title_node.text != kinito_loc.common_text["WINDOW_TITLE_KPETWIZARD"] and title_node.text != kinito_loc.common_text["WINDOW_FCLUB_TITLE"]:
 				title_node.text = kinito_loc.kinito_common_text["WINDOW_TITLE_INTERNET"]
 	else:
-		patched_internet["loading"] = false
-		patched_internet["home"] = false
-		patched_internet["results"] = false
-		patched_internet["page"] = false
-		patched_internet["wizards"] = false
-		patched_internet["webworld"] = false
+		patched_internet = {"loading":false,"home":false,"results":false,"page":false,"wizards":false,"kpet_installing":false,"fclub_installing":false,"webworld":false}
 
 func _on_results_tween_step(object, key, elapsed, value):
 	var results_text_node = get_parent().get_parent().get_node("5").get_child(0).get_node("Active/ScrollContainer/HBoxContainer/Control2/Control/Results")
@@ -375,6 +378,9 @@ func patch_history():
 
 func patch_wiki():
 	pass
+	
+func patch_newvidk():
+	pass
 
 func patch_img():
 	pass
@@ -383,6 +389,40 @@ func patch_news():
 	pass
 
 func path_store():
+	print_mod("Patching store page.")
+	var current_tab = get_parent().get_parent().get_node("5").get_child(0)
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/B"):
+		var blog_post_text = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/B")
+		blog_post_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0"].replacen("[Term]", Vars.get("SearchTerm"))
+
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/A"):
+		var blog_post_header = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/A")
+		blog_post_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_HEADER"].replacen("[Term]", Vars.get("SearchTerm"))
+	# Shop listing, item 1
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/0/Shop1/A2"):
+		var item_1_short = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/0/Shop1/A2")
+		var item_1_header = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/0/Shop1/A3")
+		var item_1_text = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/0/Shop1/A4")
+		item_1_short.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I1_1"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I1_0"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I1_2"].replacen("[Term]", Vars.get("SearchTerm"))
+	# Shop listing, item 2
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/1/Shop1/A2"):
+		var item_1_short = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/1/Shop1/A2")
+		var item_1_header = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/1/Shop1/A3")
+		var item_1_text = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/1/Shop1/A4")
+		item_1_short.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I2_1"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I2_0"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I2_2"].replacen("[Term]", Vars.get("SearchTerm"))
+	
+	# Shop listing, item 2
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/2/Shop1/A2"):
+		var item_1_short = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/2/Shop1/A2")
+		var item_1_header = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/2/Shop1/A3")
+		var item_1_text = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/2/2/Shop1/A4")
+		item_1_short.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I3_1"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I3_0"].replacen("[Term]", Vars.get("SearchTerm"))
+		item_1_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S2_I3_2"].replacen("[Term]", Vars.get("SearchTerm"))
 	pass
 
 func patch_blog():
@@ -390,12 +430,11 @@ func patch_blog():
 	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/B"):
 		var blog_post_text = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/B")
 		blog_post_text.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0"].replacen("[Term]", Vars.get("SearchTerm"))
-		
-	## Blog
-	if current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A"):
-		var blog_post_header = get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A")
-		blog_post_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0_HEADER"].replacen("[Term]", Vars.get("SearchTerm"))
 
+	if current_tab.has_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A"):
+		var blog_post_header = current_tab.get_node("Active/ScrollContainer/HBoxContainer/Control/ColorRect2/0/A")
+		blog_post_header.bbcode_text = kinito_loc.kinito_common_text["PC_INTERNET_S0_HEADER"].replacen("[Term]", Vars.get("SearchTerm"))
+	pass
 ######
 ## Web World
 ######
@@ -586,15 +625,22 @@ func _patch_email():
 	pass
 
 var found_your_world = false
+var first_load = false
 func _process(delta):
-	
+	while !config_loaded: # _ready() has to wait up before the config is fully loaded
+		yield(get_tree().create_timer(0.1,false),"timeout")
+	if !first_load:
+		for child_node in $CanvasLayer.get_children():
+			child_node.visible = config["SHOW_DEBUG_CONSOLES"] == true
+		files_loaded = load_translation_files(config["LANGUAGE"])
+		first_load = true
 	# Patch intro screen (PC)
 	if config["SHOW_DEBUG_CONSOLES"] == true:
 		_show_node_paths()
 	if files_loaded:
 		if Input.is_key_pressed(KEY_TAB):
 			print_log("Reloading translation files...")
-			files_loaded = load_translation_files(current_lang)
+			files_loaded = load_translation_files(config["LANGUAGE"])
 		if config["SHOW_DEBUG_CONSOLES"] == true:
 			_show_localized()
 		

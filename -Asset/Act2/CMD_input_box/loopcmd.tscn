@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://-Asset/Act2/CMD_input_box/LoopCMD.cs" type="Script" id=1]
+[ext_resource path="res://-Asset/App020/ping.wav" type="AudioStream" id=2]
+[ext_resource path="res://-Asset/App000/loopcmd/off.wav" type="AudioStream" id=3]
+[ext_resource path="res://-Asset/App000/loopcmd/binary.wav" type="AudioStream" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
-var current_lang = \"en\"
+var current_lang = \"\"
 var KinitoLocalizedText = preload(\"res://localization_system/AllLocalizedData.gd\")
 var kinito_loc = KinitoLocalizedText.new()
 var kinitoBat = \"\"
@@ -18,16 +21,21 @@ func _close():
 	#yield(get_tree().create_timer(10.0,false), \"timeout\")
 	#$BAT.CloseCommandPrompts()
 	pass
-
+var loc_mod
 var onetime = false
 func _run():
 	if onetime== false:
 		onetime = true
+		print(\"[localization] starting up bat\")
+		for i in get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node(\"Mods\").get_children():
+			print(\"[localization] node: \" + i.name)
+		loc_mod = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_node(\"Mods/LocalizationSystem\")
+		current_lang = loc_mod.config[\"LANGUAGE\"]
 		import_lang(current_lang)
 		save_score()
 		
 func import_lang(lang):
-	print(\"loading translation files for %s\" % lang)
+	print(\"[localization] loading translation files for %s\" % lang)
 	var cmn_path = \"user://localization/%s/common_text_data.json\" % lang
 	var file : File = File.new()
 	if file.file_exists(cmn_path) == true:
@@ -37,7 +45,7 @@ func import_lang(lang):
 		kinito_loc.kinito_common_text = error.result
 		file.close()
 	else:
-		print(\"common lines doesn't exist for %s.. ignoring\" % lang)
+		print(\"[localization] common lines doesn't exist for %s.. ignoring\" % lang)
 		return false
 	return true
 
@@ -61,6 +69,9 @@ func save_score():
 		file.store_string(kinitoBat)
 		file.close()
 	yield(get_tree().create_timer(1.0), \"timeout\")
+	# important for C# to know what the cmd is called..
+	Vars.set(\"CMD_title\", kinito_loc.kinito_common_text[\"KPET_YWC_TITLE\"])
+	Vars.set(\"CMD_title_select\", kinito_loc.kinito_common_text[\"KPET_YWC_TITLE_SELECT\"])
 	$BAT.RunBatFile()
 	
 	
@@ -86,30 +97,31 @@ func endCMD():
 
 func generate_bat():
 	print(\"[localization] Generating compiler bat\")
+	print(\"[localization] \" + kinito_loc.kinito_common_text[\"KPET_YWC_TITLE\"])
 	kinitoBat = \"\"\"
 @echo off
 setlocal EnableDelayedExpansion
-title \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_TITLE\"]+\"\"\"
+title \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_TITLE\"]+\"\"\"
 cls
 :loop
 set \"assets[0]=kinitomodle.zip\" & set \"assets[1]=TCP_proc.zip\" & set \"assets[2]=webworldpack.zip\" & set \"assets[3]=DLCclub.zip\" & set \"assets[4]=kinitoTextToSpeach.pck\"  & set \"assets[5]=unreleased3Dproject.zip\" & set \"assets[6]=assets0x.zip\"  & set \"assets[7]=kinitoscript.txt\"  & set \"assets[8]=main.gdscript\" & set \"assets[9]=binaryhash.txt\"  & set \"assets[10]=kinitoquestions.zip\"  & set \"assets[11]=kinitoicon.ico\"  & set \"assets[12]=webpage.cache\"  & set \"assets[13]=membershipform.txt\"
 
 for /L %%i in (0,1,13) do (
 	ping LOCALHOST -n 1 -w 500> nul
-	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_DWNFILE\"]+\"\"\"
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_DWNFILE\"]+\"\"\"
 )
 for /L %%i in (0,1,13) do (
 	ping LOCALHOST -n 1 -w 500> nul
-	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_MODFILE\"]+\"\"\"
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_MODFILE\"]+\"\"\"
 )
 
 for /L %%i in (0,1,13) do (
 	ping LOCALHOST -n 1 -w 500> nul
-	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_ASSETC\"]+\"\"\"
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_ASSETC\"]+\"\"\"
 )
 
 if exist \"cmd.off\" (
-	echo \"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_COMPILEC\"]+\"\"\"
+	echo \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_COMPILEC\"]+\"\"\"
 	goto :end
 ) else (
 	goto :loop
@@ -119,7 +131,7 @@ if exist \"cmd.off\" (
 echo=
 echo= --------------------------------------------
 echo=
-\"\"\"+'echo|set /p= '+kinito_loc.common_text_dict[\"KPET_YWC_INIT\"]+\"\"\"
+echo|set /p= \"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_INIT\"]+\"\"\"
 echo|set /p=:  [
 for /l %%x in (1, 1, 5) do ( 
 ping LOCALHOST -n 1 -w 500> nul
@@ -132,14 +144,12 @@ color 7
 echo=
 ping LOCALHOST -n 3 -w 500> nul
 echo=
-echo=\"\"\"+kinito_loc.common_text_dict[\"KPET_YWC_YW\"]+\"\"\"
+echo=\"\"\"+kinito_loc.kinito_common_text[\"KPET_YWC_YW\"]+\"\"\"
 echo=
 ping LOCALHOST -n 3 -w 500> nul
 ping LOCALHOST -n 3 -w 500> nul
 exit
-\"\"\"
-
-"
+\"\"\""
 
 [sub_resource type="Animation" id=2]
 resource_name = "off"
@@ -223,13 +233,16 @@ __meta__ = {
 script = ExtResource( 1 )
 
 [node name="binary" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 volume_db = -17.0
 pitch_scale = 0.01
 
 [node name="off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 volume_db = -7.0
 
 [node name="ping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 0.75
 
